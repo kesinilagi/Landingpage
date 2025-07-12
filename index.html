@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOA CoDex - Buka Kunci Keberlimpahan Sejati Anda</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>LOA Codex — Law of Allah Framework | Tool Rezeki & Healing Spiritual</title>
+    <meta name="description" content="LOA Codex adalah tool spiritual modern: doa, sholawat, teknologi 8D & ruang reminder. Membantu membuka pintu rezeki, healing trauma & surrender total.">
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXX');
+    </script>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
+    <!-- Google Fonts - Inter and Playfair Display -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -14,35 +23,38 @@
         /* Global Styles */
         body {
             font-family: 'Inter', sans-serif;
-            /* Background color moved to Tailwind classes for gradient */
-            overflow-x: hidden;
+            overflow-x: hidden; /* Prevent horizontal scroll from word rain */
             position: relative;
         }
         .font-serif-display {
             font-family: 'Playfair Display', serif;
         }
+        /* Radial gradient for hero section */
         .hero-section {
-            /* Adjusted radial gradient for a lighter green glow */
             background-image: radial-gradient(ellipse 80% 50% at 50% -20%,rgba(46, 139, 87, 0.2), transparent);
             position: relative;
             z-index: 1;
         }
+        /* Custom Gold Color */
         .text-gold {
-            color: #FFD700; /* Gold color */
+            color: #FFD700;
         }
         .bg-gold {
-            background-color: #FFD700; /* Gold color */
+            background-color: #FFD700;
         }
         .hover\:bg-gold-dark:hover {
-            background-color: #DAA520; /* Darker Gold on hover */
+            background-color: #DAA520;
         }
+        /* Text Glow Effect */
         .glow-text {
             text-shadow: 0 0 20px rgba(255, 215, 0, 0.7), 0 0 35px rgba(255, 215, 0, 0.5);
         }
+        /* Feature Card Hover Effect */
         .feature-card:hover {
             transform: translateY(-5px);
             border-color: rgba(255, 215, 0, 0.5);
         }
+        /* Video Container Aspect Ratio */
         .video-container {
             position: relative;
             padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
@@ -60,7 +72,7 @@
             height: 100%;
         }
 
-        /* Word Rain Styles - adjusted for green/gold theme */
+        /* Word Rain Styles */
         @keyframes fall {
             0% { transform: translateY(-100%); }
             100% { transform: translateY(200vh); } /* Ensures words fall past the entire scrollable height */
@@ -74,15 +86,27 @@
             font-weight: 700;
             z-index: 0; /* Ensures word rain is in the background */
         }
+
+        /* Custom list style for star bullets (adapted for dark theme) */
+        .list-star li {
+            position: relative;
+            padding-left: 1.5rem; /* Space for the star */
+        }
+        .list-star li::before {
+            content: "⭐"; /* Star emoji */
+            position: absolute;
+            left: 0;
+            color: #FFD700; /* Gold color for the star */
+        }
     </style>
 </head>
-<!-- Adjusted body background gradient for a lighter green feel -->
+<!-- Adjusted body background gradient for a darker green feel -->
 <body class="bg-gradient-to-br from-[#1a362f] to-[#2a4d40] text-gray-200">
 
     <!-- Word Rain Background Container - Covers the entire page height -->
     <div id="word-rain-container" class="absolute inset-0 overflow-hidden pointer-events-none"></div>
 
-    <!-- HEADER - Background adjusted to match new lighter green theme -->
+    <!-- HEADER -->
     <header class="bg-[#1a362f]/70 backdrop-blur-sm sticky top-0 z-50 border-b border-green-800">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-xl font-bold text-white font-serif-display tracking-wider">LOA CoDex</h1>
@@ -93,11 +117,7 @@
     <!-- HERO SECTION -->
     <section class="hero-section py-20 md:py-28 text-center">
         <div class="container mx-auto px-6 relative z-10">
-            <h1 class="font-serif-display text-4xl md:text-5xl font-bold text-white mt-4 mb-6 leading-tight">
-                Hutang Tak Kunjung Lunas?<br />
-                Rezeki Seret, Keluarga Sering Ribut?<br />
-                Lamar Kerja/Afiliasi Susah Tembus?
-            </h1>
+            <!-- Removed the h1 block with questions as requested -->
             <p class="max-w-3xl mx-auto text-lg md:text-xl text-gray-300 mb-10">
                 Anda sudah berusaha mati-matian, mungkin bahkan sudah mencoba berbagai amalan jalur langit dan membeli banyak Ebook tutorial. Tapi kenapa semua terasa jalan di tempat? Lelah, kan?
             </p>
@@ -105,6 +125,16 @@
                 Ini bukan tentang kurang usaha, tapi tentang 'rem' tak kasat mata:
                 <span class="block mt-2 text-white italic">Mental Block & Koneksi yang Belum Selaras dengan Sumber Rezeki Sejati.</span>
             </p>
+
+            <!-- NEW HEADLINE AND SUBHEADLINE ADDED HERE -->
+            <h1 class="font-serif-display text-4xl md:text-5xl font-bold text-white mt-4 mb-6 leading-tight">
+                LOA Codex Membantumu Membuka Pintu Rezeki & Hidup Lega
+            </h1>
+            <p class="max-w-3xl mx-auto text-lg md:text-xl text-gray-300 mb-10">
+                Tool spiritual modern: Atasi masalah finansial, trauma, pasangan & sakit menahun — Tanpa janji kosong, hanya surrender & usaha nyata. Bukan sekadar ebook/buku fisik yang habis dibaca terus lupa, ini adalah teman perjalanan keberlimpahan kamu.
+            </p>
+            <!-- END NEW CONTENT -->
+
             <a href="#harga" class="bg-gold text-[#1a362f] font-bold px-8 py-4 rounded-lg text-xl hover:bg-gold-dark transition-transform hover:scale-105 inline-block shadow-lg">
                 BUKA KUNCI KEBERLIMPAHAN SEJATI ANDA!
             </a>
@@ -116,7 +146,7 @@
         </div>
     </section>
 
-    <!-- CLARITY / EXPLANATION SECTION - Background adjusted -->
+    <!-- CLARITY / EXPLANATION SECTION -->
     <section class="py-20 bg-[#1a362f]/80 relative z-10">
         <div class="container mx-auto px-6 max-w-4xl">
             <h2 class="text-3xl md:text-4xl font-bold text-white font-serif-display text-center mb-12">
@@ -146,7 +176,7 @@
         </div>
     </section>
 
-    <!-- BENEFITS SECTION - Card backgrounds adjusted -->
+    <!-- BENEFITS SECTION (Original from previous version, kept for completeness) -->
     <section id="benefits" class="py-20 relative z-10">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
@@ -206,6 +236,12 @@
         </div>
     </section>
 
+    <!-- Reminder Section - MOVED HERE -->
+    <section class="py-16 px-4 bg-emerald-50 max-w-4xl mx-auto rounded-lg shadow-md text-gray-700">
+        <h2 class="text-3xl md:text-4xl font-bold text-emerald-800 mb-6 text-center">Fitur Reminder</h2>
+        <p class="text-lg text-center">LOA Codex punya fitur Reminder — bukan untuk menghitung hasil, tapi menjaga konsistensi surrender & dzikir harian.</p>
+    </section>
+
     <!-- TESTIMONIALS SECTION -->
     <section id="testimonials" class="py-20 bg-[#1a362f]/80 relative z-10 border-t border-gold/20">
         <div class="container mx-auto px-6">
@@ -215,7 +251,6 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <!-- Testimonial 1 -->
                 <div class="bg-[#3a6a57] p-8 rounded-lg shadow-xl border border-gold/30 flex flex-col items-center text-center">
-                    <!-- Removed image tag -->
                     <p class="text-lg italic text-gray-200 mb-4">
                         "Setelah mencoba LOA CoDex, rasanya seperti ada 'sumbatan' yang lepas! Rezeki mulai mengalir dari arah tak terduga, dan hubungan keluarga jadi lebih harmonis. Alhamdulillah!"
                     </p>
@@ -223,7 +258,6 @@
                 </div>
                 <!-- Testimonial 2 -->
                 <div class="bg-[#3a6a57] p-8 rounded-lg shadow-xl border border-gold/30 flex flex-col items-center text-center">
-                    <!-- Removed image tag -->
                     <p class="text-lg italic text-gray-200 mb-4">
                         "Dulu sering cemas soal uang, tapi metode Kawrooh di Ebook ini benar-benar mengubah mindset saya. Sekarang lebih tenang dan percaya bahwa Allah Maha Pemberi Rezeki. Sangat direkomendasikan!"
                     </p>
@@ -231,7 +265,6 @@
                 </div>
                 <!-- Testimonial 3 -->
                 <div class="bg-[#3a6a57] p-8 rounded-lg shadow-xl border border-gold/30 flex flex-col items-center text-center">
-                    <!-- Removed image tag -->
                     <p class="text-lg italic text-gray-200 mb-4">
                         "Audio afirmasi 8D-nya luar biasa! Tidur jadi lebih nyenyak dan bangun dengan energi positif. Saya merasa lebih selaras dan peluang afiliasi saya mulai tembus. Terima kasih LOA CoDex!"
                     </p>
@@ -241,7 +274,7 @@
         </div>
     </section>
 
-    <!-- PRICING SECTION - Background adjusted -->
+    <!-- PRICING SECTION -->
     <section id="harga" class="py-20 bg-[#2a4d40]/50 relative z-10 border-t border-b border-gold/20">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
@@ -251,18 +284,43 @@
                 <p class="text-lg md:text-xl text-gray-300 mb-8">
                     Sebuah investasi yang jauh lebih berharga daripada biaya-biaya yang selama ini Anda keluarkan tanpa hasil.
                 </p>
-                <div class="text-gold glow-text text-5xl md:text-6xl font-bold font-serif-display mb-2">
-                    Rp 199.000 <!-- Updated to single price -->
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Pricing Option 1: 1 User -->
+                <div class="bg-[#3a6a57] p-8 rounded-lg shadow-xl border border-gold/30 flex flex-col items-center text-center">
+                    <h3 class="text-3xl font-bold text-white mb-4">Paket 1 Pengguna</h3>
+                    <p class="text-xl md:text-2xl text-gray-400 line-through mb-1">Harga Normal: Rp 786.000</p>
+                    <p class="text-gold glow-text text-5xl md:text-6xl font-bold font-serif-display mb-4">
+                        Rp 369.000
+                    </p>
+                    <p class="text-lg text-gray-300 mb-8">
+                        Untuk 1 pengguna: Akses seumur hidup + Layanan update gratis.
+                    </p>
+                    <a href="https://clicky.id/payment/purchase/685e3965eaa33876d3fc5f54" class="bg-gold text-[#1a362f] font-bold px-8 py-4 rounded-full text-xl hover:bg-gold-dark transition-transform hover:scale-105 inline-block shadow-lg shadow-gold/30">
+                        Dapatkan Sekarang (1 Pengguna)
+                    </a>
                 </div>
-                <p class="text-lg md:text-xl text-gold font-bold">
-                    Penawaran Terbatas! Dapatkan Sekarang!
-                </p>
+
+                <!-- Pricing Option 2: 3 Users -->
+                <div class="bg-[#3a6a57] p-8 rounded-lg shadow-xl border border-gold/30 flex flex-col items-center text-center">
+                    <h3 class="text-3xl font-bold text-white mb-4">Paket 3 Pengguna</h3>
+                    <p class="text-xl md:text-2xl text-gray-400 line-through mb-1">Harga Normal: Rp 999.000</p>
+                    <p class="text-gold glow-text text-5xl md:text-6xl font-bold font-serif-display mb-4">
+                        Rp 399.000
+                    </p>
+                    <p class="text-lg text-gray-300 mb-8">
+                        Untuk 3 pengguna: Akses seumur hidup + Layanan update gratis.
+                    </p>
+                    <a href="https://clicky.id/payment/purchase/685e3965eaa33876d3fc5f54" class="bg-gold text-[#1a362f] font-bold px-8 py-4 rounded-full text-xl hover:bg-gold-dark transition-transform hover:scale-105 inline-block shadow-lg shadow-gold/30">
+                        Dapatkan Sekarang (3 Pengguna)
+                    </a>
+                </div>
             </div>
-            <div class="text-center mt-12">
-                <a href="https://clicky.id/payment/purchase/685e3965eaa33876d3fc5f54" class="bg-gold text-[#1a362f] font-bold px-10 py-5 rounded-full text-2xl hover:bg-gold-dark transition-transform hover:scale-105 inline-block shadow-xl shadow-gold/30">
-                    YA, SAYA SIAP MENGAKTIFKAN KEBERLIMPAHAN SAYA!
-                </a>
-            </div>
+
+            <p class="text-lg md:text-xl text-gold font-bold text-center mt-12">
+                Penawaran Khusus Terbatas! Jangan lewatkan kesempatan ini!
+            </p>
         </div>
     </section>
 
@@ -278,8 +336,8 @@
             <p class="text-lg text-gray-300 mb-10">
                 Coba renungkan. Berapa banyak uang yang sudah kita habiskan untuk:
                 <ul class="list-disc list-inside mx-auto max-w-md text-left text-gray-300 mt-4 space-y-2">
-                    <li>**Skincare jutaan** demi penampilan luar, tapi batin tetap <span class="font-bold text-gold">insecure</span> dan rezeki seret?</li>
-                    <li>**Kopi bergelas-gelas** setiap hari untuk 'mengusir' kantuk atau <span class="font-bold text-gold">overthinking</span>, tapi masalah tetap berputar di kepala?</li>
+                    <li><strong class="text-white">Skincare jutaan</strong> demi penampilan luar, tapi batin tetap <span class="font-bold text-gold">insecure</span> dan rezeki seret?</li>
+                    <li><strong class="text-white">Kopi bergelas-gelas</strong> setiap hari untuk 'mengusir' kantuk atau <span class="font-bold text-gold">overthinking</span>, tapi masalah tetap berputar di kepala?</li>
                     <li>Atau berbagai pelatihan/Ebook yang hanya teori tanpa solusi tuntas?</li>
                 </ul>
                 <p class="text-lg text-gray-300 mt-6">
@@ -289,24 +347,20 @@
             <p class="text-2xl font-bold text-gold mt-6 mb-4">
                 Ini Adalah 'Upgrade' Diri Seumur Hidup!
             </p>
-            
-
-            <a href="https://clicky.id/payment/purchase/685e3965eaa33876d3fc5f54" class="bg-gold text-[#1a362f] font-bold px-10 py-5 rounded-full text-xl hover:bg-gold-dark transition-transform hover:scale-105 inline-block shadow-lg shadow-gold/20">
+            <a href="#harga" class="bg-gold text-[#1a362f] font-bold px-10 py-5 rounded-full text-xl hover:bg-gold-dark transition-transform hover:scale-105 inline-block shadow-lg shadow-gold/20">
                 YA, SAYA SIAP BERKELIMPAHAN!
             </a>
-
             <div class="mt-12 border-2 border-dashed border-gold/50 text-gold rounded-lg p-6 max-w-lg mx-auto">
                 <p class="font-bold text-xl mb-2">Ingat:</p>
                 <p class="text-lg">Saatnya berhenti menghitung pengeluaran, dan mulai menghitung keberkahan yang akan datang!</p>
             </div>
-
             <p class="text-lg text-gray-300 mt-12">
                 Jangan tunda lagi kebebasan finansial dan ketenangan batin Anda. Bergabunglah dengan mereka yang sudah menemukan kunci keberlimpahan sejati!
             </p>
         </div>
     </section>
 
-    <!-- FOOTER - Background adjusted -->
+    <!-- FOOTER -->
     <footer class="bg-[#102a24] border-t border-gold/10 relative z-10">
         <div class="container mx-auto px-6 py-6 text-center text-gray-400">
             <p>© 2025 LOA CODEX. Semua Hak Cipta Dilindungi.</p>
@@ -314,6 +368,17 @@
     </footer>
 
     <script>
+        // Google Analytics Tracking CTA
+        function orderNow() {
+            gtag('event', 'conversion', {
+                'send_to': 'G-XXXXXXXXX',
+                'event_category': 'CTA',
+                'event_label': 'Klik CTA Order'
+            });
+            const orderLink = "https://wa.me/628xxxxxxxxx?text=Halo%20saya%20mau%20aktifkan%20LOA%20Codex";
+            window.open(orderLink, "_blank");
+        }
+
         // Word Rain Background Logic
         document.addEventListener('DOMContentLoaded', () => {
             const wordRainContainer = document.getElementById('word-rain-container');
@@ -349,7 +414,7 @@
 
             populateWords();
 
-            // Smooth scroll for anchor links
+            // Smooth scroll for anchor links (already present in the old code)
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
