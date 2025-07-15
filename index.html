@@ -127,6 +127,12 @@
             border: 1px solid rgba(255, 215, 0, 0.2);
             transform: translateY(-20px);
             transition: transform 0.3s ease-in-out;
+            /* --- Penyesuaian untuk Mobile Keyboard --- */
+            max-height: 90vh; /* Batasi tinggi modal agar tidak melebihi viewport */
+            overflow-y: auto; /* Aktifkan scroll internal jika konten melebihi max-height */
+            display: flex; /* Menggunakan flexbox untuk konten internal */
+            flex-direction: column; /* Konten tersusun vertikal */
+            justify-content: space-between;
         }
         .modal-overlay.show .modal-content {
             transform: translateY(0);
@@ -559,6 +565,16 @@
             selectedPriceDisplay.textContent = `Rp ${price}`;
             orderModal.classList.add('show');
             document.body.style.overflow = 'hidden'; // Nonaktifkan scroll body
+            // Ini akan mencoba scroll ke input yang sedang aktif
+            const formInputs = orderModal.querySelectorAll('.form-input');
+            formInputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    // Beri sedikit waktu agar keyboard muncul
+                    setTimeout(() => {
+                        this.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 100);
+                });
+            });        
             gtag('event', 'view_item', {
                 'currency': 'IDR',
                 'value': parseFloat(price.replace('.', '').replace(',', '.')),
@@ -572,7 +588,14 @@
 
         function closeOrderModal() {
             orderModal.classList.remove('show');
-            document.body.style.overflow = ''; // Aktifkan kembali scroll body
+            document.body.style.overflow = '';
+            // Cek apakah pesanan belum disubmit
+            if (!isOrderSubmitted) {
+                setTimeout(() => {
+                    showExitIntentModal();
+                }, 100); // Memberi sedikit jeda untuk tampilan yang halus
+            }
+            document.getElementById('orderForm').reset(); // Reset field formulir
         }
 
         // --- Fungsi Modal Exit Intent ---
