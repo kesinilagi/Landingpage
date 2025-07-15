@@ -1,9 +1,8 @@
-
 <html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Segera Dapatkan</title>
+    <title>LOA Codex — Law of Allah Framework | Tool Rezeki & Healing Spiritual</title>
     <meta name="description" content="LOA Codex adalah tool spiritual modern: doa, sholawat, teknologi 8D & ruang reminder. Membantu membuka pintu rezeki, healing trauma & surrender total.">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXX"></script>
     <script>
@@ -233,16 +232,16 @@
                 Ini bukanlah kebetulan, bisa jadi inilah jalan Pertolongan dari Allah atas masalah-masalahmu.
             </p>
             <p class="max-w-3xl mx-auto text-lg md:text-xl text-gray-300 mb-10">
-              Anda sudah berjuang keras mencari rezeki, <strong class="text-white">melunasi hutang, berjuang memiliki keturunan (garis dua), mencari jodoh, hingga melawan sakit menahun.</strong> Namun, rasanya seperti ada yang menahan?
-                
+                Anda sudah berjuang keras mencari rezeki, <strong class="text-white">melunasi hutang, berjuang memiliki keturunan (garis dua), mencari jodoh, hingga melawan sakit menahun.</strong> Namun, rasanya seperti ada yang menahan?
+                 
             </p>
-            
-            
+         
+         
             <p class="max-w-3xl mx-auto text-lg md:text-xl text-gray-300 mb-10">
-            Anda sudah berusaha mati-matian, mungkin bahkan sudah mencoba berbagai amalan jalur langit dan membeli banyak Ebook tutorial. Tapi kenapa semua terasa jalan di tempat? Lelah, kan?    
+            Anda sudah berusaha mati-matian, mungkin bahkan sudah mencoba berbagai amalan jalur langit dan membeli banyak Ebook tutorial. Tapi kenapa semua terasa jalan di tempat? Lelah, kan?   
             </p>
             <p class="max-w-3xl mx-auto text-lg md:text-xl text-gold font-bold mb-12">
-              <br><br>Ini bukan tentang kurang usaha</br>tapi tentang 'rem' tak kasat mata</br>yang Tanpa disadari, <span class="block mt-2 text-white italic"><br>wadah rezeki kita kotor..</br><br> 9 lubang hawa nafsu kita kotor, yang membuat wadah rezeki kita jadi susah mendapatkan keberkahan dan jadi bocor.</br>Mental Block & Koneksi yang Belum Selaras dengan Sumber Rezeki Sejati.</span>
+                <br><br>Ini bukan tentang kurang usaha</br>tapi tentang 'rem' tak kasat mata</br>yang Tanpa disadari, <span class="block mt-2 text-white italic"><br>wadah rezeki kita kotor..</br><br> 9 lubang hawa nafsu kita kotor, yang membuat wadah rezeki kita jadi susah mendapatkan keberkahan dan jadi bocor.</br>Mental Block & Koneksi yang Belum Selaras dengan Sumber Rezeki Sejati.</span>
             </p>
             <h1 class="font-serif-display text-4xl md:text-5xl font-bold text-white mt-4 mb-6 leading-tight">
                 LOA Codex Membantumu Membuka Pintu Rezeki & Hidup Lega
@@ -480,7 +479,7 @@
                 <input type="tel" id="phone" name="phone" class="form-input" placeholder="Contoh: 6281234567890" required>
 
                 <label for="email" class="block text-lg font-semibold mb-2">Email:</label>
-                <input type="email" id="email" name="email" class="form-input" placeholder="Masukkan email Anda" required>
+                <input type="email" id="email" name="email" class="form-input" placeholder="Masukkan email Anda">
 
                 <button type="submit" class="form-submit-btn">Kirim Pesanan</button>
             </form>
@@ -513,9 +512,9 @@
     </div>
 
     <section id="successMessageSection" class="hidden fixed inset-0 bg-gradient-to-br from-[#1a362f] to-[#2a4d40] text-gray-200 flex flex-col items-center justify-center text-center p-8 z-[1000]">
-        <h2 class="font-serif-display text-5xl md:text-6xl font-bold text-gold mb-6 animate-pulse">Terima Kasih!</h2>
+        <h2 class="font-serif-display text-5xl md:text-6xl font-bold text-gold mb-6 animate-pulse">Terima Kasih kepada Anda,karena Sudah Menolong diri Anda</h2>
         <p class="text-xl md:text-2xl max-w-2xl mb-8">
-             Silakan lanjutkan percakapan di WhatsApp kami untuk detail pembayaran, konfirmasi transfer, dan akses produk Anda.
+            Silakan lanjutkan percakapan di WhatsApp kami untuk detail pembayaran, konfirmasi transfer, dan akses transformasi hidup Anda.
         </p>
         <p class="text-lg md:text-xl max-w-2xl mb-12">
             Kami akan segera memproses pesanan Anda setelah konfirmasi pembayaran.
@@ -550,7 +549,7 @@
         const selectedPriceDisplay = document.getElementById('selectedPriceDisplay');
 
         // Nomor WhatsApp Anda (digunakan untuk link WhatsApp)
-        const yourWhatsAppNumber = "6285821704011"; // GANTI DENGAN NOMOR WHATSAPP KAMU
+        const yourWhatsAppNumber = "6285602378995"; // GANTI DENGAN NOMOR WHATSAPP KAMU
 
         // --- Fungsi Modal Pesanan ---
         function openOrderModal(packageType, price) {
@@ -559,139 +558,143 @@
             selectedPackageDisplay.textContent = packageType;
             selectedPriceDisplay.textContent = `Rp ${price}`;
             orderModal.classList.add('show');
-
-            // Lacak event saat modal terbuka
-            gtag('event', 'modal_open', {
-                'event_category': 'Form',
-                'event_label': `Open Order Form for ${packageType}`
+            document.body.style.overflow = 'hidden'; // Nonaktifkan scroll body
+            gtag('event', 'view_item', {
+                'currency': 'IDR',
+                'value': parseFloat(price.replace('.', '').replace(',', '.')),
+                'items': [{
+                    'item_id': 'LOA_Codex_Paket',
+                    'item_name': packageType,
+                    'price': parseFloat(price.replace('.', '').replace(',', '.'))
+                }]
             });
         }
 
         function closeOrderModal() {
-            // Cek apakah pesanan belum disubmit
-            // Jika belum, tampilkan modal exit intent. Ini akan muncul SETIAP KALI form ditutup tanpa submit.
-            if (!isOrderSubmitted) {
-                setTimeout(() => {
-                    showExitIntentModal();
-                }, 100); // Memberi sedikit jeda untuk tampilan yang halus
-            }
-            orderModal.classList.remove('show'); // Tetap tutup modal pesanan utama
-            document.getElementById('orderForm').reset(); // Reset field formulir
+            orderModal.classList.remove('show');
+            document.body.style.overflow = ''; // Aktifkan kembali scroll body
         }
 
         // --- Fungsi Modal Exit Intent ---
-        function showExitIntentModal() {
-            exitIntentModal.classList.add('show');
-            // Catatan: isOrderSubmitted tidak diubah di sini, dan kita TIDAK menyimpan di sessionStorage.
-            // Ini agar modal muncul setiap kali form ditutup tanpa submit.
-            gtag('event', 'exit_intent_shown', {
-                'event_category': 'Engagement',
-                'event_label': 'Exit Intent Modal Displayed'
-            });
-        }
+        let exitIntentShown = false;
+        document.addEventListener('mouseleave', (event) => {
+            if (event.clientY < 10 && !exitIntentShown && !isOrderSubmitted && !orderModal.classList.contains('show')) {
+                exitIntentModal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+                exitIntentShown = true;
+                gtag('event', 'popup_shown', {
+                    'event_category': 'Engagement',
+                    'event_label': 'Exit Intent Modal'
+                });
+            }
+        });
 
         function closeExitIntentModal() {
             exitIntentModal.classList.remove('show');
+            document.body.style.overflow = '';
         }
 
         function closeExitIntentModalAndScroll() {
             closeExitIntentModal();
-            // Gulir halus ke bagian harga
-            document.querySelector('#harga').scrollIntoView({
-                behavior: 'smooth'
-            });
+            // Scroll ke bagian harga
+            const hargaSection = document.getElementById('harga');
+            if (hargaSection) {
+                hargaSection.scrollIntoView({ behavior: 'smooth' });
+            }
         }
 
-        // --- Logika Pengiriman Formulir (Hanya ke WhatsApp) ---
-        document.getElementById('orderForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Mencegah pengiriman formulir default
+        // --- Penanganan Formulir Pesanan ---
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
 
             const name = document.getElementById('name').value;
             const phone = document.getElementById('phone').value;
-            const email = document.getElementById('email').value;
+            const email = document.getElementById('email').value; // Ambil email meskipun opsional
             const packageType = modalPackageType.value;
             const price = modalPrice.value;
 
-            // Tutup modal pemesanan segera
-            orderModal.classList.remove('show');
+            // Format pesan untuk WhatsApp
+            let whatsappMessage = `Halo LOA Codex, saya ingin memesan produk "${packageType}" seharga Rp ${price}.`;
+            whatsappMessage += `\nNama: ${name}`;
+            whatsappMessage += `\nNomor WhatsApp: ${phone}`;
+            if (email) { // Tambahkan email hanya jika diisi
+                whatsappMessage += `\nEmail: ${email}`;
+            }
+            whatsappMessage += `\n\nMohon informasinya untuk proses pembayaran dan akses produk. Terima kasih.`;
 
-            // 1. Buat pesan WhatsApp dengan detail pesanan
-            const whatsappMessage = `Halo, saya ingin memesan ${packageType} LOA Codex seharga Rp ${price}.\n\nNama: ${name}\nNo. WA: ${phone}\nEmail: ${email}\n\nMohon informasinya untuk detail pembayaran dan konfirmasi transfer. Terima kasih!`;
-            const whatsappLink = `https://wa.me/${6285602378995}?text=${encodeURIComponent(whatsappMessage)}`;
-            
-            // Set link di tombol "Lanjutkan ke WhatsApp" pada halaman sukses
-            whatsappSuccessLink.href = whatsappLink;
+            // Encode pesan untuk URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
 
-            // 2. Tampilkan halaman sukses
-            isOrderSubmitted = true; // Set flag karena pesanan dianggap sudah disubmit
-            document.body.classList.add('overflow-hidden'); // Mencegah scroll di belakang halaman sukses
+            // Buat link WhatsApp
+            const whatsappUrl = `https://wa.me/${6285602378995}?text=${encodedMessage}`;
+
+            // Perbarui link di halaman sukses
+            whatsappSuccessLink.href = whatsappUrl;
+
+            // Tutup modal pesanan
+            closeOrderModal();
+
+            // Tampilkan halaman sukses
             successMessageSection.classList.remove('hidden');
-            successMessageSection.classList.add('flex');
+            document.body.style.overflow = 'hidden'; // Pastikan scroll body mati di halaman sukses
 
-            // Lacak event pengiriman formulir berhasil
-            gtag('event', 'form_submit_success', {
-                'event_category': 'Form',
-                'event_label': `Order Submitted Successfully for ${packageType}`,
-                'value': parseFloat(price.replace(/\./g, ''))
+            // Set flag pesanan sudah disubmit
+            isOrderSubmitted = true;
+
+            // Tracking Google Analytics untuk pembelian
+            gtag('event', 'purchase', {
+                'transaction_id': 'T' + Date.now(), // ID transaksi unik
+                'affiliation': 'LOA Codex Website',
+                'value': parseFloat(price.replace('.', '').replace(',', '.')),
+                'currency': 'IDR',
+                'tax': 0,
+                'shipping': 0,
+                'items': [{
+                    'item_id': 'LOA_Codex_Paket',
+                    'item_name': packageType,
+                    'price': parseFloat(price.replace('.', '').replace(',', '.')),
+                    'quantity': 1
+                }]
             });
         });
 
-        // --- Event Listener Global Saat Dokumen Dimuat ---
-        document.addEventListener('DOMContentLoaded', () => {
-            // Logika Hujan Kata (Word Rain) - Sudah ada sebelumnya
-            const wordRainContainer = document.getElementById('word-rain-container');
-            const wordPool = ['Rezeki', 'Berkah', 'Limpah', 'Tenang', 'Bahagia', 'Sejahtera', 'Syukur', 'Ikhlas', 'Uang', 'Damai', 'Sukses', 'Kaya', 'Afirmasi', 'Solusi', 'Kemudahan', 'Cinta', 'Berlimpah'];
+        // --- Word Rain Effect ---
+        const words = ['Rezeki', 'Berkah', 'Kelimpahan', 'Healing', 'Doa', 'Surrender', 'Success', 'Harmony', 'Wealth', 'Peace', 'Abundance'];
+        const wordRainContainer = document.getElementById('word-rain-container');
 
-            const generateWordElement = (word) => {
-                const span = document.createElement('span');
-                span.textContent = word.text;
-                span.className = 'falling-word';
-                span.style.left = word.left;
-                span.style.fontSize = `${Math.random() * 14 + 10}px`;
-                span.style.animationDuration = `${Math.random() * 10 + 5}s`;
-                span.style.animationDelay = `${Math.random() * 10}s`;
-                span.style.opacity = Math.random() * 0.4 + 0.1;
-                return span;
-            };
+        function createFallingWord() {
+            const word = words[Math.floor(Math.random() * words.length)];
+            const span = document.createElement('span');
+            span.textContent = word;
+            span.classList.add('falling-word');
+            
+            // Posisi X acak
+            span.style.left = `${Math.random() * 100}vw`;
+            
+            // Durasi animasi acak (lebih lambat untuk beberapa kata agar terlihat lebih alami)
+            const duration = Math.random() * 10 + 10; // Antara 10 dan 20 detik
+            span.style.animationDuration = `${duration}s`;
+            
+            // Ukuran font acak
+            span.style.fontSize = `${Math.random() * 2 + 1}rem`; // Antara 1rem dan 3rem
 
-            const populateWords = () => {
-                for (let i = 0; i < 300; i++) {
-                    const word = {
-                        text: wordPool[Math.floor(Math.random() * wordPool.length)],
-                        left: `${Math.random() * 100}%`,
-                    };
-                    wordRainContainer.appendChild(generateWordElement(word));
-                }
-            };
-            populateWords();
+            wordRainContainer.appendChild(span);
 
-            // Gulir halus untuk tautan jangkar
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
+            // Hapus elemen setelah selesai animasi untuk efisiensi
+            span.addEventListener('animationiteration', () => {
+                span.remove();
             });
-
-            // Event Listener untuk menutup modal pesanan dengan tombol Escape
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && orderModal.classList.contains('show')) {
-                    closeOrderModal(); // Panggil fungsi closeOrderModal yang sudah dimodifikasi
+            // Fallback jika animationiteration tidak bekerja atau untuk kata yang sangat lambat
+            setTimeout(() => {
+                if (span.parentNode) {
+                    span.remove();
                 }
-            });
+            }, duration * 1000 + 1000); // Hapus 1 detik setelah animasi seharusnya selesai
+        }
 
-            // Event Listener untuk menutup modal pesanan dengan klik di luar area konten
-            orderModal.addEventListener('click', (e) => {
-                if (e.target === orderModal) { // Hanya jika klik tepat di overlay modal
-                    closeOrderModal(); // Panggil fungsi closeOrderModal yang sudah dimodifikasi
-                }
-            });
+        // Buat kata-kata jatuh secara berkala
+        setInterval(createFallingWord, 500); // Setiap 0.5 detik
 
-            // Catatan: Logika exit intent mouseleave/scroll global dihilangkan
-            // karena kita fokus pada exit intent saat menutup modal pesanan.
-        });
     </script>
 </body>
 </html>
