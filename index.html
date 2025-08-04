@@ -1,13 +1,13 @@
 <html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Selamat Anda Beruntung</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ANDA BERUNTUNG</title>
     <meta name="description" content="LOA Codex adalah tool spiritual modern: doa, sholawat, teknologi 8D & ruang reminder. Membantu membuka pintu rezeki, healing trauma & surrender total.">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-XXXXXXXXX'); // GANTI DENGAN ID GA4 KAMU
     </script>
@@ -16,22 +16,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Global Styles */
+        /* Palet Warna Baru: Dark Blue-Gray & Gold */
         body {
             font-family: 'Inter', sans-serif;
-            overflow-x: hidden; /* Prevent horizontal scroll from word rain */
+            background-color: #121212; /* Darker background */
+            color: #E0E0E0; /* Light gray text */
+            overflow-x: hidden;
             position: relative;
+        }
+        .bg-dark-primary {
+            background-color: #1a1a1a;
+        }
+        .bg-dark-secondary {
+            background-color: #242424;
         }
         .font-serif-display {
             font-family: 'Playfair Display', serif;
         }
-        /* Radial gradient for hero section */
-        .hero-section {
-            background-image: radial-gradient(ellipse 80% 50% at 50% -20%,rgba(46, 139, 87, 0.2), transparent);
-            position: relative;
-            z-index: 1;
-        }
-        /* Custom Gold Color */
         .text-gold {
             color: #FFD700;
         }
@@ -41,23 +42,38 @@
         .hover\:bg-gold-dark:hover {
             background-color: #DAA520;
         }
-        /* Text Glow Effect */
         .glow-text {
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.7), 0 0 35px rgba(255, 215, 0, 0.5);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
         }
-        /* Feature Card Hover Effect */
+        .feature-card {
+            transition: all 0.3s ease-in-out;
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+        }
         .feature-card:hover {
             transform: translateY(-5px);
             border-color: rgba(255, 215, 0, 0.5);
+            background-color: #242424;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
         }
-        /* Video Container Aspect Ratio */
+        .feature-icon {
+            background-color: #333;
+            color: #FFD700;
+            transition: all 0.3s ease-in-out;
+        }
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+            background-color: #FFD700;
+            color: #1a1a1a;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+        }
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             border-radius: 1rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
             border: 1px solid rgba(255, 215, 0, 0.2);
         }
         .video-container iframe {
@@ -67,42 +83,14 @@
             width: 100%;
             height: 100%;
         }
-
-        /* Word Rain Styles */
-        @keyframes fall {
-            0% { transform: translateY(-100%); }
-            100% { transform: translateY(200vh); } /* Ensures words fall past the entire scrollable height */
-        }
-        .falling-word {
-            animation: fall linear infinite;
-            position: absolute;
-            color: rgba(255, 215, 0, 0.15); /* Slightly increased opacity for better visibility */
-            white-space: nowrap;
-            pointer-events: none;
-            font-weight: 700;
-            z-index: 0; /* Ensures word rain is in the background */
-        }
-
-        /* Custom list style for star bullets (adapted for dark theme) */
-        .list-star li {
-            position: relative;
-            padding-left: 1.5rem; /* Space for the star */
-        }
-        .list-star li::before {
-            content: "⭐"; /* Star emoji */
-            position: absolute;
-            left: 0;
-            color: #FFD700; /* Gold color for the star */
-        }
-
-        /* Modal Styles */
+        /* Modal Styles - Updated for new theme */
         .modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.85);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -116,22 +104,21 @@
             visibility: visible;
         }
         .modal-content {
-            background-color: #1a362f; /* Darker green background for modal */
+            background-color: #1a1a1a;
             padding: 2.5rem;
             border-radius: 1rem;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
             position: relative;
             max-width: 90%;
             width: 500px;
-            color: #e2e8f0; /* Light text for modal */
+            color: #e2e8f0;
             border: 1px solid rgba(255, 215, 0, 0.2);
             transform: translateY(-20px);
             transition: transform 0.3s ease-in-out;
-            /* --- Penyesuaian untuk Mobile Keyboard --- */
-            max-height: 90vh; /* Batasi tinggi modal agar tidak melebihi viewport */
-            overflow-y: auto; /* Aktifkan scroll internal jika konten melebihi max-height */
-            display: flex; /* Menggunakan flexbox untuk konten internal */
-            flex-direction: column; /* Konten tersusun vertikal */
+            max-height: 90vh;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
             justify-content: space-between;
         }
         .modal-overlay.show .modal-content {
@@ -156,8 +143,8 @@
             padding: 0.75rem;
             margin-bottom: 1rem;
             border-radius: 0.5rem;
-            border: 1px solid #3a6a57; /* Border color for inputs */
-            background-color: #2a4d40; /* Background color for inputs */
+            border: 1px solid #333;
+            background-color: #242424;
             color: #e2e8f0;
             font-size: 1rem;
         }
@@ -169,31 +156,29 @@
         .form-submit-btn {
             width: 100%;
             background-color: #FFD700;
-            color: #1a362f;
+            color: #1a1a1a;
             font-weight: bold;
             padding: 1rem;
             border-radius: 0.75rem;
             font-size: 1.125rem;
             transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
             cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
         .form-submit-btn:hover {
             background-color: #DAA520;
             transform: translateY(-2px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
         }
-
-        /* Message Box Styles */
         .message-box {
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color: #1a362f;
+            background-color: #1a1a1a;
             padding: 2rem;
             border-radius: 1rem;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
             z-index: 1001;
             color: #e2e8f0;
             text-align: center;
@@ -208,7 +193,7 @@
         }
         .message-box button {
             background-color: #FFD700;
-            color: #1a362f;
+            color: #1a1a1a;
             font-weight: bold;
             padding: 0.75rem 1.5rem;
             border-radius: 0.5rem;
@@ -219,252 +204,127 @@
         .message-box button:hover {
             background-color: #DAA520;
         }
+        .main-cta-btn {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 15px rgba(255, 215, 0, 0);
+            }
+        }
+        .exit-intent-modal-text {
+            color: #F8F8F8;
+        }
+        .exit-intent-modal-text strong {
+            color: #FFD700;
+        }
     </style>
 </head>
-<body class="bg-gradient-to-br from-[#1a362f] to-[#2a4d40] text-gray-200">
+<body class="bg-dark-primary">
 
-    <div id="word-rain-container" class="absolute inset-0 overflow-hidden pointer-events-none"></div>
-
-    <header class="bg-[#1a362f]/70 backdrop-blur-sm sticky top-0 z-50 border-b border-green-800">
+    <header class="bg-dark-primary/70 backdrop-blur-sm sticky top-0 z-50 border-b border-[#333]">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-xl font-bold text-white font-serif-display tracking-wider">LOA CoDex</h1>
-            <a href="#harga" class="bg-gold text-[#1a362f] font-bold px-5 py-2 rounded-lg hover:bg-gold-dark transition-colors">Dapatkan Sekarang</a>
+            <a href="#harga" class="bg-gold text-dark-primary font-bold px-5 py-2 rounded-lg hover:bg-gold-dark transition-colors">Dapatkan Sekarang</a>
         </div>
     </header>
 
-    <section class="hero-section py-20 md:py-28 text-center">
-        <div class="container mx-auto px-6 relative z-10">
-            <p class="max-w-3xl mx-auto text-xl md:text-2xl text-gold font-bold mb-10 glow-text">
-                Ini bukanlah kebetulan, bisa jadi inilah jalan Pertolongan dari Allah atas masalah-masalahmu.
-            </p>
-            <p class="max-w-3xl mx-auto text-lg md:text-xl text-gray-300 mb-10">
-                Anda sudah berjuang keras mencari rezeki, <strong class="text-white">melunasi hutang, berjuang memiliki keturunan (garis dua), mencari jodoh, hingga melawan sakit menahun.</strong> Namun, rasanya seperti ada yang menahan?
-                 
-            </p>
-         
-         
-            <p class="max-w-3xl mx-auto text-lg md:text-xl text-gray-300 mb-10">
-            Anda sudah berusaha mati-matian, mungkin bahkan sudah mencoba berbagai amalan jalur langit dan membeli banyak Ebook tutorial. Tapi kenapa semua terasa jalan di tempat? Lelah, kan?   
-            </p>
-            <p class="max-w-3xl mx-auto text-lg md:text-xl text-gold font-bold mb-12">
-                <br><br>Ini bukan tentang kurang usaha</br>tapi tentang 'rem' tak kasat mata</br>yang Tanpa disadari, <span class="block mt-2 text-white italic"><br>wadah rezeki kita kotor..</br><br> 9 lubang hawa nafsu kita kotor, yang membuat wadah rezeki kita jadi susah mendapatkan keberkahan dan jadi bocor.</br>Mental Block & Koneksi yang Belum Selaras dengan Sumber Rezeki Sejati.</span>
-            </p>
-            <h1 class="font-serif-display text-4xl md:text-5xl font-bold text-white mt-4 mb-6 leading-tight">
-                LOA Codex Membantumu <br>Membuka Pintu Rezeki Barokah</br> & Hidup Berkelimpahan
-            </h1>
-            <p class="max-w-3xl mx-auto text-lg md:text-xl text-gray-300 mb-10">
-                Tool spiritual modern: Atasi masalah finansial, trauma masa lalu, susah cari pasangan , pejuang garis dua & sakit menahun.hanya dengan surrender & usaha nyata. Bukan sekadar ebook/buku fisik yang habis dibaca terus lupa, ini adalah teman perjalanan transformasi hidup kamu.
-            </p>
-            <a href="#harga" class="bg-gold text-[#1a362f] font-bold px-8 py-4 rounded-lg text-xl hover:bg-gold-dark transition-transform hover:scale-105 inline-block shadow-lg">
-                BUKA KUNCI KEBERLIMPAHAN SEJATI ANDA!
-            </a>
-        </div>
-        <div class="mt-16 relative z-10">
-            <img src="https://raw.githubusercontent.com/kesinilagi/asetmusik/main/Coverijo.png"
-                alt="LOA Codex (Law Of Allah Framework) Book"
-                class="mx-auto w-2/3 max-w-sm rounded-lg transition-transform duration-300 hover:scale-105 border-2 border-gold shadow-2xl shadow-green-900" />
-        </div>
-    </section>
-
-    <section class="py-20 bg-[#1a362f]/80 relative z-10">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-white font-serif-display text-center mb-12">
-                "Tapi kan sudah sholat, zikir, puasa... itu bukan jalur langit?"
-            </h2>
-            <p class="text-lg md:text-xl text-gray-300 text-center mb-8">
-                Tentu saja itu jalur langit! Dan itu adalah fondasi yang kokoh. Namun, seringkali kita lupa bahwa hubungan kita dengan Allah bukan hanya soal kuantitas ibadah, melainkan juga <span class="font-bold text-gold">kualitas hati dan keyakinan bawah sadar kita.</span>
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-                <div class="bg-[#3a6a57] p-8 rounded-lg shadow-xl border border-gold/30">
-                    <h3 class="text-2xl font-bold text-gold mb-4">Mental Block Tersembunyi</h3>
-                    <p class="text-gray-300">
-                        Pernahkah Anda merasa tidak layak menerima rezeki besar? Atau diam-diam percaya bahwa uang itu sumber masalah? Keyakinan negatif yang mengakar di pikiran bawah sadar inilah yang menjadi 'rem' tak terlihat, meski kita sudah berusaha keras secara fisik dan spiritual.
-                    </p>
-                </div>
-                <div class="bg-[#3a6a57] p-8 rounded-lg shadow-xl border border-gold/30">
-                    <h3 class="text-2xl font-bold text-gold mb-4">Koneksi Sejati dengan Sang Sumber</h3>
-                    <p class="text-gray-300">
-                        Allah adalah sumber segala kelimpahan. Ketika hati dan pikiran kita selaras dengan kehendak-Nya, dan kita membersihkan diri dari hal-hal yang menghalangi aliran rezeki (termasuk emosi negatif), maka pintu-pintu kelimpahan akan terbuka dengan sendirinya. Ini tentang <span class="font-bold text-gold">menyelaraskan energi batin dengan Hukum Allah.</span>
-                    </p>
+    <main>
+        <section class="py-20 md:py-28 text-center bg-dark-primary">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <p class="max-w-3xl mx-auto text-xl md:text-2xl text-gold font-bold mb-6 glow-text">
+                    Ini bukanlah kebetulan, bisa jadi inilah jalan Pertolongan dari Allah atas masalah-masalahmu.
+                </p>
+                <h1 class="font-serif-display text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                    THE PATH <br>Jalan Rezeki Barokah & Hidup Berkelimpahan
+                </h1>
+                <p class="max-w-3xl mx-auto text-lg md:text-xl text-gray-400 mb-10">
+                    Anda sudah berjuang keras mencari rezeki, melunasi hutang, berjuang memiliki keturunan, mencari jodoh, hingga melawan sakit menahun. Namun, rasanya seperti ada 'rem' tak kasat mata yang menahan.
+                </p>
+                <div class="mt-10">
+                    <a href="#harga" class="bg-gold text-dark-primary font-bold px-10 py-5 rounded-full text-xl hover:bg-gold-dark transition-transform hover:scale-105 inline-block shadow-lg shadow-gold/30 main-cta-btn">
+                        BUKA KUNCI KEBERLIMPAHAN SEJATI ANDA!
+                    </a>
                 </div>
             </div>
-            <p class="text-xl text-center text-gold font-bold mt-12">
-                Saatnya bukan hanya banyak-banyakin amalan, tapi juga <span class="text-white">memperbaiki 'receiver' dalam diri kita.</span>
-            </p>
-        </div>
-    </section>
+        </section>
 
-    <section id="benefits" class="py-20 relative z-10">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-white font-serif-display">Di Dalam <span class="text-gold">LOA CoDex</span>, Anda Akan Menemukan Peta Jalan:</h2>
-                <p class="text-xl text-gray-300 mt-4">Sebuah Framework Praktis untuk Hidup Berlimpah</p>
-            </div>
-            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
-                <div class="flex flex-col items-center text-center bg-[#3a6a57] p-6 rounded-lg shadow-md border border-gold/30 feature-card transition-all duration-300">
-                    <div class="flex-shrink-0 w-16 h-16 bg-gold/10 text-gold rounded-full flex items-center justify-center text-3xl mb-4">✨</div>
-                    <div>
-                        <h3 class="text-xl font-bold text-white mb-2">Metode Kawrooh: Pelepasan Emosi</h3>
-                        <p class="text-gray-300">Temukan teknik revolusioner untuk melepaskan beban emosi, trauma, dan keyakinan negatif yang selama ini menghalangi Anda dari rezeki. Rasakan kelegaan instan dan energi positif mengalir!</p>
+        <section class="py-20 bg-dark-secondary">
+            <div class="container mx-auto px-6 max-w-5xl">
+                <div class="md:flex md:items-center md:space-x-12">
+                    <div class="md:w-1/2 mb-10 md:mb-0">
+                        <img src="http://googleusercontent.com/file_content/0" alt="LOA Codex Book" class="w-full max-w-sm mx-auto rounded-lg shadow-2xl transition-transform duration-300 hover:scale-105 border-2 border-gold shadow-gold/20" />
                     </div>
-                </div>
-                <div class="flex flex-col items-center text-center bg-[#3a6a57] p-6 rounded-lg shadow-md border border-gold/30 feature-card transition-all duration-300">
-                    <div class="flex-shrink-0 w-16 h-16 bg-gold/10 text-gold rounded-full flex items-center justify-center text-3xl mb-4">🎧</div>
-                    <div>
-                        <h3 class="text-xl font-bold text-white mb-2">Audio Afirmasi 8D & Sholawat Pemagnet Rezeki</h3>
-                        <p class="text-gray-300">Program ulang pikiran bawah sadar Anda dengan afirmasi kuat dan lantunan sholawat serta doa mustajab dalam format audio 8D yang imersif. Tidak perlu menghafal, cukup dengarkan dan rasakan getarannya.</p>
-                    </div>
-                </div>
-                <div class="flex flex-col items-center text-center bg-[#3a6a57] p-6 rounded-lg shadow-md border border-gold/30 feature-card transition-all duration-300">
-                    <div class="flex-shrink-0 w-16 h-16 bg-gold/10 text-gold rounded-full flex items-center justify-center text-3xl mb-4">📖</div>
-                    <div>
-                        <h3 class="text-xl font-bold text-white mb-2">Law of Allah Framework Praktis</h3>
-                        <p class="text-gray-300">Pahami konsep Law of Allah (Hukum Allah) secara mendalam dan bagaimana mengaplikasikannya dalam kehidupan sehari-hari untuk menarik kelimpahan finansial, hubungan, dan ketenangan batin.</p>
-                    </div>
-                </div>
-                <div class="flex flex-col items-center text-center bg-[#3a6a57] p-6 rounded-lg shadow-md border border-gold/30 feature-card transition-all duration-300">
-                    <div class="flex-shrink-0 w-16 h-16 bg-gold/10 text-gold rounded-full flex items-center justify-center text-3xl mb-4">💡</div>
-                    <div>
-                        <h3 class="text-xl font-bold text-white mb-2">Panduan Jelas & Aplikatif</h3>
-                        <p class="text-gray-300">LOA CoDex dirancang agar mudah dipahami dan langsung bisa dipraktikkan. Tidak ada teori berbelit-belit, hanya panduan langkah demi langkah menuju transformasi diri.</p>
-                    </div>
-                </div>
-                <div class="flex flex-col items-center text-center bg-[#3a6a57] p-6 rounded-lg shadow-md border border-gold/30 feature-card transition-all duration-300">
-                    <div class="flex-shrink-0 w-16 h-16 bg-gold/10 text-gold rounded-full flex items-center justify-center text-3xl mb-4">🔄</div>
-                    <div>
-                        <h3 class="text-xl font-bold text-white mb-2">Update Gratis Seumur Hidup</h3>
-                        <p class="text-gray-300">Dapatkan semua pembaruan konten dan fitur baru di masa depan secara otomatis, tanpa biaya tambahan. Investasi sekali, manfaat seumur hidup!</p>
-                    </div>
-                </div>
-                <div class="flex flex-col items-center text-center bg-[#3a6a57] p-6 rounded-lg shadow-md border border-gold/30 feature-card transition-all duration-300">
-                    <div class="flex-shrink-0 w-16 h-16 bg-gold/10 text-gold rounded-full flex items-center justify-center text-3xl mb-4">✅</div>
-                    <div>
-                        <h3 class="text-xl font-bold text-white mb-2">Bukan Hanya Finansial</h3>
-                        <p class="text-gray-300">LOA CoDex juga membantu Anda meningkatkan kualitas hubungan, kesehatan, ketenangan batin, dan kebahagiaan menyeluruh. Rezeki itu luas, bukan cuma uang!</p>
+                    <div class="md:w-1/2">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white font-serif-display mb-6">
+                            Apa yang Ada di dalam THE PATH?
+                        </h2>
+                        <ul class="space-y-6 text-gray-300 list-star text-lg">
+                            <li><strong class="text-gold">Metode SIRNA:</strong> Santai - Identifikasi - Ridho - Nanya & Niat - Alirkan. Langkah praktis membuka pintu keajaiban.</li>
+                            <li><strong class="text-gold">Ruang Digital Interaktif:</strong> Audio visual untuk healing trauma, anxiety, afirmasi, dan memanifestasikan impian.</li>
+                            <li><strong class="text-gold">Ruang Rahasia Malam:</strong> Akses khusus untuk malam hari saat hati paling jujur dan doa paling kuat.</li>
+                            <li><strong class="text-gold">Bonus Audio Doa & Sholawat:</strong> Disertai panduan dan fadilah penggunaannya.</li>
+                            <li><strong class="text-gold">Bukan Aplikasi Biasa:</strong> Ini Teman Jiwa. Namamu disapa setiap kali membuka. Dirancang sepenuh hati untuk perjalanan hatimu.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="py-16 px-4 bg-emerald-50 max-w-4xl mx-auto rounded-lg shadow-md text-gray-700">
-        <h2 class="text-3xl md:text-4xl font-bold text-emerald-800 mb-6 text-center">Fitur List Goal</h2>
-        <p class="text-lg text-center">LOA Codex punya fitur Bucket List — Daftar harapan yang perlu di manifestasikan dan di sertakan tools akses menanamkan di bawah sadar.</p>
-    </section>
-
-    <section id="testimonials" class="py-20 bg-[#1a362f]/80 relative z-10 border-t border-gold/20">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-white font-serif-display text-center mb-12">
-                Apa Kata Mereka yang Sudah Merasakan Manfaatnya?
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <div class="bg-[#3a6a57] p-8 rounded-lg shadow-xl border border-gold/30 flex flex-col items-center text-center">
-                    <p class="text-lg italic text-gray-200 mb-4">
-                        "Setelah mencoba LOA CoDex, rasanya seperti ada 'sumbatan' yang lepas! Rezeki mulai mengalir dari arah tak terduga, dan hubungan keluarga jadi lebih harmonis. Alhamdulillah!"
-                    </p>
-                    <p class="font-bold text-gold">- Budi Santoso, Pengusaha</p>
-                </div>
-                <div class="bg-[#3a6a57] p-8 rounded-lg shadow-xl border border-gold/30 flex flex-col items-center text-center">
-                    <p class="text-lg italic text-gray-200 mb-4">
-                        "Dulu sering cemas soal uang, tapi Ruang Rahasia yang hanya bisa di akses malam hari di Ebook ini membuat saya jadi ringan dalam Qiyamul Lail. Sekarang lebih tenang dan percaya bahwa Allah Maha Pemberi Rezeki. Sangat direkomendasikan!"
-                    </p>
-                    <p class="font-bold text-gold">- Siti Aminah, Karyawan Swasta</p>
-                </div>
-                <div class="bg-[#3a6a57] p-8 rounded-lg shadow-xl border border-gold/30 flex flex-col items-center text-center">
-                    <p class="text-lg italic text-gray-200 mb-4">
-                        "Audio afirmasi 8D-nya luar biasa! Tidur jadi lebih nyenyak dan bangun dengan energi positif. Saya merasa lebih selaras dan peluang afiliasi saya mulai tembus. Terima kasih LOA CoDex!"
-                    </p>
-                    <p class="font-bold text-gold">- Rina Dewi, Afiliator</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="harga" class="py-20 bg-[#2a4d40]/50 relative z-10 border-t border-b border-gold/20">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
+        <section id="harga" class="py-20 bg-dark-primary">
+            <div class="container mx-auto px-6 max-w-4xl text-center">
                 <h2 class="font-serif-display text-4xl md:text-5xl font-bold text-white mb-4">
-                    Berapa Nilai Transformasi Hidup Anda?
+                    Pilih Paket Keberlimpahan Anda
                 </h2>
-                <p class="text-lg md:text-xl text-gray-300 mb-8">
+                <p class="text-lg md:text-xl text-gray-400 mb-10">
                     Sebuah investasi yang jauh lebih berharga daripada biaya-biaya yang selama ini Anda keluarkan tanpa hasil.
                 </p>
-            </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="bg-[#3a6a57] p-8 rounded-lg shadow-xl border border-gold/30 flex flex-col items-center text-center">
-                    <h3 class="text-3xl font-bold text-white mb-4">Paket 1 Pengguna</h3>
-                    <p class="text-xl md:text-2xl text-gray-400 line-through mb-1">Harga Normal: Rp 786.000</p>
-                    <p class="text-gold glow-text text-5xl md:text-6xl font-bold font-serif-display mb-4">
-                        Rp 369.000
-                    </p>
-                    <p class="text-lg text-gray-300 mb-8">
-                        Untuk 1 pengguna: Akses seumur hidup + Layanan update gratis.
-                    </p>
-                    <button onclick="openOrderModal('Paket 1 Pengguna', '369.000')" class="bg-gold text-[#1a362f] font-bold px-8 py-4 rounded-full text-xl hover:bg-gold-dark transition-transform hover:scale-105 inline-block shadow-lg shadow-gold/30">
-                        Dapatkan Sekarang (1 Pengguna)
-                    </button>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="feature-card p-8 rounded-lg shadow-xl flex flex-col items-center">
+                        <h3 class="text-3xl font-bold text-white mb-4">Paket 1 Pengguna</h3>
+                        <p class="text-xl md:text-2xl text-gray-500 line-through mb-1">Rp 786.000</p>
+                        <p class="text-gold glow-text text-5xl md:text-6xl font-bold font-serif-display mb-4">
+                            Rp 369.000
+                        </p>
+                        <p class="text-lg text-gray-400 mb-8">
+                            Untuk 1 pengguna: Akses seumur hidup + Layanan update gratis.
+                        </p>
+                        <button onclick="openOrderModal('Paket 1 Pengguna', '369.000')" class="bg-gold text-dark-primary font-bold px-8 py-4 rounded-full text-xl hover:bg-gold-dark transition-transform hover:scale-105 inline-block shadow-lg shadow-gold/30">
+                            Dapatkan Sekarang
+                        </button>
+                    </div>
+
+                    <div class="feature-card p-8 rounded-lg shadow-xl flex flex-col items-center">
+                        <h3 class="text-3xl font-bold text-white mb-4">Paket 3 Pengguna</h3>
+                        <p class="text-xl md:text-2xl text-gray-500 line-through mb-1">Rp 999.000</p>
+                        <p class="text-gold glow-text text-5xl md:text-6xl font-bold font-serif-display mb-4">
+                            Rp 399.000
+                        </p>
+                        <p class="text-lg text-gray-400 mb-8">
+                            Untuk 3 pengguna: Akses seumur hidup + Layanan update gratis.
+                        </p>
+                        <button onclick="openOrderModal('Paket 3 Pengguna', '399.000')" class="bg-gold text-dark-primary font-bold px-8 py-4 rounded-full text-xl hover:bg-gold-dark transition-transform hover:scale-105 inline-block shadow-lg shadow-gold/30">
+                            Dapatkan Sekarang
+                        </button>
+                    </div>
                 </div>
 
-                <div class="bg-[#3a6a57] p-8 rounded-lg shadow-xl border border-gold/30 flex flex-col items-center text-center">
-                    <h3 class="text-3xl font-bold text-white mb-4">Paket 3 Pengguna</h3>
-                    <p class="text-xl md:text-2xl text-gray-400 line-through mb-1">Harga Normal: Rp 999.000</p>
-                    <p class="text-gold glow-text text-5xl md:text-6xl font-bold font-serif-display mb-4">
-                        Rp 399.000
-                    </p>
-                    <p class="text-lg text-gray-300 mb-8">
-                        Untuk 3 pengguna: Akses seumur hidup + Layanan update gratis.
-                    </p>
-                    <button onclick="openOrderModal('Paket 3 Pengguna', '399.000')" class="bg-gold text-[#1a362f] font-bold px-8 py-4 rounded-full text-xl hover:bg-gold-dark transition-transform hover:scale-105 inline-block shadow-lg shadow-gold/30">
-                        Dapatkan Sekarang (3 Pengguna)
-                    </button>
-                </div>
-            </div>
-
-            <p class="text-lg md:text-xl text-gold font-bold text-center mt-12">
-                Penawaran Khusus Terbatas! <br>Khusus Bulam Muharram ini</br> Jangan lewatkan kesempatan ini!
-            </p>
-        </div>
-    </section>
-
-    <section class="py-20 relative z-10">
-        <div class="container mx-auto px-6 text-center max-w-3xl">
-            <h2 class="font-serif-display text-3xl md:text-4xl font-bold text-white mb-4">
-                "Apakah ini benar-benar akan berhasil untuk saya?"
-            </h2>
-            <p class="text-xl text-gray-300 italic mb-8">
-                Keraguan adalah 'rem' mental block yang paling halus.
-            </p>
-            <p class="text-lg text-gray-300 mb-10">
-                Coba renungkan. Berapa banyak uang yang sudah kita habiskan untuk:
-                <ul class="list-disc list-inside mx-auto max-w-md text-left text-gray-300 mt-4 space-y-2">
-                    <li><strong class="text-white">Skincare jutaan</strong> demi penampilan luar, tapi batin tetap <span class="font-bold text-gold">insecure</span> dan rezeki seret?</li>
-                    <li><strong class="text-white">Kopi bergelas-gelas</strong> setiap hari untuk 'mengusir' kantuk atau <span class="font-bold text-gold">overthinking</span>, tapi masalah tetap berputar di kepala?</li>
-                    <li>Atau berbagai pelatihan/Ebook yang hanya teori tanpa solusi tuntas?</li>
-                </ul>
-                <p class="text-lg text-gray-300 mt-6">
-                LOA CoDex adalah peta harta karun batin yang akan membuka kunci-kunci kelimpahan yang selama ini tersembunyi, menjawab persoalan kehidupan yang tidak pernah diajarkan di bangku sekolah.
+                <p class="text-lg md:text-xl text-gold font-bold text-center mt-12">
+                    Penawaran Khusus Terbatas! <br>Jangan lewatkan kesempatan ini!</br>
                 </p>
-            </p>
-            <p class="text-2xl font-bold text-gold mt-6 mb-4">
-                Ini Adalah 'Upgrade' Diri Seumur Hidup!
-            </p>
-            <a href="#harga" class="bg-gold text-[#1a362f] font-bold px-10 py-5 rounded-full text-xl hover:bg-gold-dark transition-transform hover:scale-105 inline-block shadow-lg shadow-gold/20">
-                YA, SAYA SIAP BERKELIMPAHAN!
-            </a>
-            <div class="mt-12 border-2 border-dashed border-gold/50 text-gold rounded-lg p-6 max-w-lg mx-auto">
-                <p class="font-bold text-xl mb-2">Ingat:</p>
-                <p class="text-lg">Saatnya berhenti menghitung pengeluaran, dan mulai menghitung keberkahan yang akan datang!</p>
             </div>
-            <p class="text-lg text-gray-300 mt-12">
-                Jangan tunda lagi kebebasan finansial dan ketenangan batin Anda. Bergabunglah dengan mereka yang sudah menemukan kunci keberlimpahan sejati!
-            </p>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <footer class="bg-[#102a24] border-t border-gold/10 relative z-10">
-        <div class="container mx-auto px-6 py-6 text-center text-gray-400">
-            <p>© 2025 LOA CODEX. Semua Hak Cipta Dilindungi.</p>
+    <footer class="bg-dark-secondary border-t border-[#333]">
+        <div class="container mx-auto px-6 py-6 text-center text-gray-500">
+            <p>© 2025 The PATH. All rights reserved.</p>
         </div>
     </footer>
 
@@ -477,37 +337,28 @@
             <form id="orderForm">
                 <input type="hidden" id="modalPackageType" name="packageType">
                 <input type="hidden" id="modalPrice" name="price">
-
                 <label for="name" class="block text-lg font-semibold mb-2">Nama Lengkap:</label>
                 <input type="text" id="name" name="name" class="form-input" placeholder="Masukkan nama Anda" required>
-
                 <label for="phone" class="block text-lg font-semibold mb-2">Nomor WhatsApp:</label>
                 <input type="tel" id="phone" name="phone" class="form-input" placeholder="Contoh: 6281234567890" required>
-
-                <label for="email" class="block text-lg font-semibold mb-2">Email(opsional):</label>
+                <label for="email" class="block text-lg font-semibold mb-2">Email (opsional):</label>
                 <input type="email" id="email" name="email" class="form-input" placeholder="Masukkan email Anda">
-
                 <button type="submit" class="form-submit-btn">Kirim Pesanan</button>
             </form>
         </div>
     </div>
 
-    <div id="messageBox" class="message-box">
-        <p id="messageBoxText" class="text-xl font-semibold"></p>
-        <button onclick="hideMessageBox()">Oke</button>
-    </div>
-
     <div id="exitIntentModal" class="modal-overlay">
         <div class="modal-content">
             <button class="modal-close-btn" onclick="closeExitIntentModal()">&times;</button>
-            <h3 class="text-3xl font-bold text-white mb-6 text-center font-serif-display">
+            <h3 class="text-3xl font-bold text-white mb-6 text-center font-serif-display exit-intent-modal-text">
                 Apakah kamu mau melewatkan kesempatan untuk menolong dirimu sendiri menjadi bahagia dan berkelimpahan?
             </h3>
-            <p class="text-lg text-gray-300 mb-8 text-center">
+            <p class="text-lg text-gray-300 mb-8 text-center exit-intent-modal-text">
                 Jangan biarkan keraguan menghalangi jalan rezekimu. LOA Codex adalah investasi untuk hidup yang lebih berlimpah dan tenang.
             </p>
             <div class="text-center">
-                <a href="#harga" onclick="closeExitIntentModalAndScroll()" class="bg-gold text-[#1a362f] font-bold px-8 py-4 rounded-full text-xl hover:bg-gold-dark transition-transform hover:scale-105 inline-block shadow-lg shadow-gold/30">
+                <a href="#harga" onclick="closeExitIntentModalAndScroll()" class="bg-gold text-dark-primary font-bold px-8 py-4 rounded-full text-xl hover:bg-gold-dark transition-transform hover:scale-105 inline-block shadow-lg shadow-gold/30">
                     Lihat Penawaran Spesial Sekarang!
                 </a>
                 <button onclick="closeExitIntentModal()" class="block w-full mt-4 text-gray-400 hover:text-white transition-colors text-sm">
@@ -517,19 +368,23 @@
         </div>
     </div>
 
-    <section id="successMessageSection" class="hidden fixed inset-0 bg-gradient-to-br from-[#1a362f] to-[#2a4d40] text-gray-200 flex flex-col items-center justify-center text-center p-8 z-[1000]">
-        <h2 class="font-serif-display text-5xl md:text-6xl font-bold text-gold mb-6 animate-pulse">Terima Kasih kepada Anda,karena Sudah Menolong diri Anda</h2>
+    <div id="messageBox" class="message-box">
+        <p id="messageBoxText" class="text-xl font-semibold"></p>
+        <button onclick="hideMessageBox()">Oke</button>
+    </div>
+    
+    <div id="successMessageSection" class="hidden fixed inset-0 bg-dark-primary text-gray-200 flex flex-col items-center justify-center text-center p-8 z-[1000]">
+        <h2 class="font-serif-display text-5xl md:text-6xl font-bold text-gold mb-6 animate-pulse">Terima Kasih kepada Anda, karena Sudah Menolong diri Anda</h2>
         <p class="text-xl md:text-2xl max-w-2xl mb-8">
             Silakan lanjutkan percakapan di WhatsApp kami untuk detail pembayaran, konfirmasi transfer, dan akses transformasi hidup Anda.
         </p>
         <p class="text-lg md:text-xl max-w-2xl mb-12">
             Kami akan segera memproses pesanan Anda setelah konfirmasi pembayaran.
         </p>
-        <a id="whatsappSuccessLink" href="#" target="_blank" class="bg-gold text-[#1a362f] font-bold px-10 py-5 rounded-full text-2xl hover:bg-gold-dark transition-transform hover:scale-105 inline-block shadow-xl shadow-gold/30">
+        <a id="whatsappSuccessLink" href="#" target="_blank" class="bg-gold text-dark-primary font-bold px-10 py-5 rounded-full text-2xl hover:bg-gold-dark transition-transform hover:scale-105 inline-block shadow-xl shadow-gold/30">
             Lanjutkan ke WhatsApp
         </a>
-    </section>
-
+    </div>
 
     <script>
         // Google Analytics Tracking CTA
@@ -540,41 +395,34 @@
                 'event_label': 'Klik CTA Order (General)'
             });
         }
-
-        // --- Global Flags & Elements ---
-        let isOrderSubmitted = false; // Flag untuk melacak apakah pesanan sudah berhasil disubmit
+        
+        let isOrderSubmitted = false;
         const orderModal = document.getElementById('orderModal');
         const exitIntentModal = document.getElementById('exitIntentModal');
         const successMessageSection = document.getElementById('successMessageSection');
-        const whatsappSuccessLink = document.getElementById('whatsappSuccessLink'); // Link WhatsApp di halaman sukses
-
-        // Elemen formulir untuk tampilan dinamis
+        const whatsappSuccessLink = document.getElementById('whatsappSuccessLink');
         const modalPackageType = document.getElementById('modalPackageType');
         const modalPrice = document.getElementById('modalPrice');
         const selectedPackageDisplay = document.getElementById('selectedPackageDisplay');
         const selectedPriceDisplay = document.getElementById('selectedPriceDisplay');
 
-        // Nomor WhatsApp Anda (digunakan untuk link WhatsApp)
-        const yourWhatsAppNumber = "6285602378995"; // GANTI DENGAN NOMOR WHATSAPP KAMU
+        const yourWhatsAppNumber = "6285602378995";
 
-        // --- Fungsi Modal Pesanan ---
         function openOrderModal(packageType, price) {
             modalPackageType.value = packageType;
             modalPrice.value = price;
             selectedPackageDisplay.textContent = packageType;
             selectedPriceDisplay.textContent = `Rp ${price}`;
             orderModal.classList.add('show');
-            document.body.style.overflow = 'hidden'; // Nonaktifkan scroll body
-            // Ini akan mencoba scroll ke input yang sedang aktif
+            document.body.style.overflow = 'hidden';
             const formInputs = orderModal.querySelectorAll('.form-input');
             formInputs.forEach(input => {
                 input.addEventListener('focus', function() {
-                    // Beri sedikit waktu agar keyboard muncul
                     setTimeout(() => {
                         this.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     }, 100);
                 });
-            });        
+            });
             gtag('event', 'view_item', {
                 'currency': 'IDR',
                 'value': parseFloat(price.replace('.', '').replace(',', '.')),
@@ -589,28 +437,31 @@
         function closeOrderModal() {
             orderModal.classList.remove('show');
             document.body.style.overflow = '';
-            // Cek apakah pesanan belum disubmit
             if (!isOrderSubmitted) {
                 setTimeout(() => {
                     showExitIntentModal();
-                }, 100); // Memberi sedikit jeda untuk tampilan yang halus
+                }, 100);
             }
-            document.getElementById('orderForm').reset(); // Reset field formulir
+            document.getElementById('orderForm').reset();
         }
 
-        // --- Fungsi Modal Exit Intent ---
         let exitIntentShown = false;
         document.addEventListener('mouseleave', (event) => {
             if (event.clientY < 10 && !exitIntentShown && !isOrderSubmitted && !orderModal.classList.contains('show')) {
-                exitIntentModal.classList.add('show');
-                document.body.style.overflow = 'hidden';
-                exitIntentShown = true;
-                gtag('event', 'popup_shown', {
-                    'event_category': 'Engagement',
-                    'event_label': 'Exit Intent Modal'
-                });
+                showExitIntentModal();
             }
         });
+
+        // Add a function to show the modal
+        function showExitIntentModal() {
+            exitIntentModal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+            exitIntentShown = true;
+            gtag('event', 'popup_shown', {
+                'event_category': 'Engagement',
+                'event_label': 'Exit Intent Modal'
+            });
+        }
 
         function closeExitIntentModal() {
             exitIntentModal.classList.remove('show');
@@ -619,54 +470,35 @@
 
         function closeExitIntentModalAndScroll() {
             closeExitIntentModal();
-            // Scroll ke bagian harga
             const hargaSection = document.getElementById('harga');
             if (hargaSection) {
                 hargaSection.scrollIntoView({ behavior: 'smooth' });
             }
         }
 
-        // --- Penanganan Formulir Pesanan ---
         document.getElementById('orderForm').addEventListener('submit', function(e) {
             e.preventDefault();
-
             const name = document.getElementById('name').value;
             const phone = document.getElementById('phone').value;
-            const email = document.getElementById('email').value; // Ambil email meskipun opsional
+            const email = document.getElementById('email').value;
             const packageType = modalPackageType.value;
             const price = modalPrice.value;
-
-            // Format pesan untuk WhatsApp
             let whatsappMessage = `Halo LOA Codex, saya ingin memesan produk "${packageType}" seharga Rp ${price}.`;
             whatsappMessage += `\nNama: ${name}`;
             whatsappMessage += `\nNomor WhatsApp: ${phone}`;
-            if (email) { // Tambahkan email hanya jika diisi
+            if (email) {
                 whatsappMessage += `\nEmail: ${email}`;
             }
             whatsappMessage += `\n\nMohon informasinya untuk proses pembayaran dan akses produk. Terima kasih.`;
-
-            // Encode pesan untuk URL
             const encodedMessage = encodeURIComponent(whatsappMessage);
-
-            // Buat link WhatsApp
-            const whatsappUrl = `https://wa.me/${6285602378995}?text=${encodedMessage}`;
-
-            // Perbarui link di halaman sukses
+            const whatsappUrl = `https://wa.me/${yourWhatsAppNumber}?text=${encodedMessage}`;
             whatsappSuccessLink.href = whatsappUrl;
-
-            // Tutup modal pesanan
             closeOrderModal();
-
-            // Tampilkan halaman sukses
             successMessageSection.classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // Pastikan scroll body mati di halaman sukses
-
-            // Set flag pesanan sudah disubmit
+            document.body.style.overflow = 'hidden';
             isOrderSubmitted = true;
-
-            // Tracking Google Analytics untuk pembelian
             gtag('event', 'purchase', {
-                'transaction_id': 'T' + Date.now(), // ID transaksi unik
+                'transaction_id': 'T' + Date.now(),
                 'affiliation': 'LOA Codex Website',
                 'value': parseFloat(price.replace('.', '').replace(',', '.')),
                 'currency': 'IDR',
@@ -680,43 +512,6 @@
                 }]
             });
         });
-
-        // --- Word Rain Effect ---
-        const words = ['Rezeki', 'Berkah', 'Kelimpahan', 'Healing', 'Doa', 'Surrender', 'Success', 'Harmony', 'Wealth', 'Peace', 'Abundance'];
-        const wordRainContainer = document.getElementById('word-rain-container');
-
-        function createFallingWord() {
-            const word = words[Math.floor(Math.random() * words.length)];
-            const span = document.createElement('span');
-            span.textContent = word;
-            span.classList.add('falling-word');
-            
-            // Posisi X acak
-            span.style.left = `${Math.random() * 100}vw`;
-            
-            // Durasi animasi acak (lebih lambat untuk beberapa kata agar terlihat lebih alami)
-            const duration = Math.random() * 10 + 10; // Antara 10 dan 20 detik
-            span.style.animationDuration = `${duration}s`;
-            
-            // Ukuran font acak
-            span.style.fontSize = `${Math.random() * 2 + 1}rem`; // Antara 1rem dan 3rem
-
-            wordRainContainer.appendChild(span);
-
-            // Hapus elemen setelah selesai animasi untuk efisiensi
-            span.addEventListener('animationiteration', () => {
-                span.remove();
-            });
-            // Fallback jika animationiteration tidak bekerja atau untuk kata yang sangat lambat
-            setTimeout(() => {
-                if (span.parentNode) {
-                    span.remove();
-                }
-            }, duration * 1000 + 1000); // Hapus 1 detik setelah animasi seharusnya selesai
-        }
-
-        // Buat kata-kata jatuh secara berkala
-        setInterval(createFallingWord, 500); // Setiap 0.5 detik
 
     </script>
 </body>
