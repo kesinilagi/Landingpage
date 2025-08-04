@@ -1,518 +1,1012 @@
 <html lang="id" class="scroll-smooth">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ANDA BERUNTUNG</title>
-    <meta name="description" content="THE PATH adalah tool spiritual modern: doa, sholawat, teknologi 8D & ruang reminder. Membantu membuka pintu rezeki, healing trauma & surrender total.">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXX'); // GANTI DENGAN ID GA4 KAMU
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        /* --- PALET WARNA HIJAU GELAP & GOLD KEMBALI --- */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #1a362f; /* Darker green background */
-            color: #e2e8f0; /* Light text */
-            overflow-x: hidden;
-            position: relative;
-        }
-        .bg-dark-primary {
-            background-color: #1a362f;
-        }
-        .bg-dark-secondary {
-            background-color: #2a4d40;
-        }
-        .font-serif-display {
-            font-family: 'Playfair Display', serif;
-        }
-        .text-gold {
-            color: #FFD700;
-        }
-        .bg-gold {
-            background-color: #FFD700;
-        }
-        .hover\:bg-gold-dark:hover {
-            background-color: #DAA520;
-        }
-        .glow-text {
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
-        }
-        .feature-card {
-            transition: all 0.3s ease-in-out;
-            background-color: #3a6a57;
-            border: 1px solid #333;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 215, 0, 0.5);
-            background-color: #2a4d40;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-        }
-        .feature-icon {
-            background-color: #333;
-            color: #FFD700;
-            transition: all 0.3s ease-in-out;
-        }
-        .feature-card:hover .feature-icon {
-            transform: scale(1.1);
-            background-color: #FFD700;
-            color: #1a1a1a;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
-        }
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 1rem;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 215, 0, 0.2);
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        /* Modal Styles - Updated for new theme */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-        }
-        .modal-overlay.show {
-            opacity: 1;
-            visibility: visible;
-        }
-        .modal-content {
-            background-color: #1a1a1a;
-            padding: 2.5rem;
-            border-radius: 1rem;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
-            position: relative;
-            max-width: 90%;
-            width: 500px;
-            color: #e2e8f0;
-            border: 1px solid rgba(255, 215, 0, 0.2);
-            transform: translateY(-20px);
-            transition: transform 0.3s ease-in-out;
-            max-height: 90vh;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .modal-overlay.show .modal-content {
-            transform: translateY(0);
-        }
-        .modal-close-btn {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: #e2e8f0;
-            cursor: pointer;
-            transition: color 0.2s;
-        }
-        .modal-close-btn:hover {
-            color: #FFD700;
-        }
-        .form-input {
-            width: 100%;
-            padding: 0.75rem;
-            margin-bottom: 1rem;
-            border-radius: 0.5rem;
-            border: 1px solid #333;
-            background-color: #242424;
-            color: #e2e8f0;
-            font-size: 1rem;
-        }
-        .form-input:focus {
-            outline: none;
-            border-color: #FFD700;
-            box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.3);
-        }
-        .form-submit-btn {
-            width: 100%;
-            background-color: #FFD700;
-            color: #1a1a1a;
-            font-weight: bold;
-            padding: 1rem;
-            border-radius: 0.75rem;
-            font-size: 1.125rem;
-            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
-        .form-submit-btn:hover {
-            background-color: #DAA520;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
-        }
-        .message-box {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #1a1a1a;
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
-            z-index: 1001;
-            color: #e2e8f0;
-            text-align: center;
-            border: 1px solid rgba(255, 215, 0, 0.2);
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-        }
-        .message-box.show {
-            opacity: 1;
-            visibility: visible;
-        }
-        .message-box button {
-            background-color: #FFD700;
-            color: #1a1a1a;
-            font-weight: bold;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            margin-top: 1.5rem;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-        .message-box button:hover {
-            background-color: #DAA520;
-        }
-        .main-cta-btn {
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
-            }
-            50% {
-                transform: scale(1.05);
-                box-shadow: 0 0 0 15px rgba(255, 215, 0, 0);
-            }
-        }
-        .exit-intent-modal-text {
-            color: #F8F8F8;
-        }
-        .exit-intent-modal-text strong {
-            color: #FFD700;
-        }
-    </style>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ANDA BERUNTUNG</title>
+
+    <meta name="description" content="LOA Codex adalah tool spiritual modern: doa, sholawat, teknologi 8D & ruang reminder. Membantu membuka pintu rezeki, healing trauma & surrender total.">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXX"></script>
+
+    <script>
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-XXXXXXXXX'); // GANTI DENGAN ID GA4 KAMU
+
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* Palet Warna Baru: Dark Blue-Gray & Gold */
+
+        body {
+
+            font-family: 'Inter', sans-serif;
+
+            background-color: #121212; /* Darker background */
+
+            color: #E0E0E0; /* Light gray text */
+
+            overflow-x: hidden;
+
+            position: relative;
+
+        }
+
+        .bg-dark-primary {
+
+            background-color: #1a1a1a;
+
+        }
+
+        .bg-dark-secondary {
+
+            background-color: #242424;
+
+        }
+
+        .font-serif-display {
+
+            font-family: 'Playfair Display', serif;
+
+        }
+
+        .text-gold {
+
+            color: #FFD700;
+
+        }
+
+        .bg-gold {
+
+            background-color: #FFD700;
+
+        }
+
+        .hover\:bg-gold-dark:hover {
+
+            background-color: #DAA520;
+
+        }
+
+        .glow-text {
+
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+
+        }
+
+        .feature-card {
+
+            transition: all 0.3s ease-in-out;
+
+            background-color: #1a1a1a;
+
+            border: 1px solid #333;
+
+        }
+
+        .feature-card:hover {
+
+            transform: translateY(-5px);
+
+            border-color: rgba(255, 215, 0, 0.5);
+
+            background-color: #242424;
+
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+
+        }
+
+        .feature-icon {
+
+            background-color: #333;
+
+            color: #FFD700;
+
+            transition: all 0.3s ease-in-out;
+
+        }
+
+        .feature-card:hover .feature-icon {
+
+            transform: scale(1.1);
+
+            background-color: #FFD700;
+
+            color: #1a1a1a;
+
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+
+        }
+
+        .video-container {
+
+            position: relative;
+
+            padding-bottom: 56.25%;
+
+            height: 0;
+
+            overflow: hidden;
+
+            border-radius: 1rem;
+
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+
+            border: 1px solid rgba(255, 215, 0, 0.2);
+
+        }
+
+        .video-container iframe {
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+        }
+
+        /* Modal Styles - Updated for new theme */
+
+        .modal-overlay {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            background-color: rgba(0, 0, 0, 0.85);
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            z-index: 1000;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+        }
+
+        .modal-overlay.show {
+
+            opacity: 1;
+
+            visibility: visible;
+
+        }
+
+        .modal-content {
+
+            background-color: #1a1a1a;
+
+            padding: 2.5rem;
+
+            border-radius: 1rem;
+
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+
+            position: relative;
+
+            max-width: 90%;
+
+            width: 500px;
+
+            color: #e2e8f0;
+
+            border: 1px solid rgba(255, 215, 0, 0.2);
+
+            transform: translateY(-20px);
+
+            transition: transform 0.3s ease-in-out;
+
+            max-height: 90vh;
+
+            overflow-y: auto;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+
+        }
+
+        .modal-overlay.show .modal-content {
+
+            transform: translateY(0);
+
+        }
+
+        .modal-close-btn {
+
+            position: absolute;
+
+            top: 1rem;
+
+            right: 1rem;
+
+            background: none;
+
+            border: none;
+
+            font-size: 1.5rem;
+
+            color: #e2e8f0;
+
+            cursor: pointer;
+
+            transition: color 0.2s;
+
+        }
+
+        .modal-close-btn:hover {
+
+            color: #FFD700;
+
+        }
+
+        .form-input {
+
+            width: 100%;
+
+            padding: 0.75rem;
+
+            margin-bottom: 1rem;
+
+            border-radius: 0.5rem;
+
+            border: 1px solid #333;
+
+            background-color: #242424;
+
+            color: #e2e8f0;
+
+            font-size: 1rem;
+
+        }
+
+        .form-input:focus {
+
+            outline: none;
+
+            border-color: #FFD700;
+
+            box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.3);
+
+        }
+
+        .form-submit-btn {
+
+            width: 100%;
+
+            background-color: #FFD700;
+
+            color: #1a1a1a;
+
+            font-weight: bold;
+
+            padding: 1rem;
+
+            border-radius: 0.75rem;
+
+            font-size: 1.125rem;
+
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+
+            cursor: pointer;
+
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+        }
+
+        .form-submit-btn:hover {
+
+            background-color: #DAA520;
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+
+        }
+
+        .message-box {
+
+            position: fixed;
+
+            top: 50%;
+
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            background-color: #1a1a1a;
+
+            padding: 2rem;
+
+            border-radius: 1rem;
+
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+
+            z-index: 1001;
+
+            color: #e2e8f0;
+
+            text-align: center;
+
+            border: 1px solid rgba(255, 215, 0, 0.2);
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+        }
+
+        .message-box.show {
+
+            opacity: 1;
+
+            visibility: visible;
+
+        }
+
+        .message-box button {
+
+            background-color: #FFD700;
+
+            color: #1a1a1a;
+
+            font-weight: bold;
+
+            padding: 0.75rem 1.5rem;
+
+            border-radius: 0.5rem;
+
+            margin-top: 1.5rem;
+
+            cursor: pointer;
+
+            transition: background-color 0.2s;
+
+        }
+
+        .message-box button:hover {
+
+            background-color: #DAA520;
+
+        }
+
+        .main-cta-btn {
+
+            animation: pulse 2s infinite;
+
+        }
+
+        @keyframes pulse {
+
+            0%, 100% {
+
+                transform: scale(1);
+
+                box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+
+            }
+
+            50% {
+
+                transform: scale(1.05);
+
+                box-shadow: 0 0 0 15px rgba(255, 215, 0, 0);
+
+            }
+
+        }
+
+        .exit-intent-modal-text {
+
+            color: #F8F8F8;
+
+        }
+
+        .exit-intent-modal-text strong {
+
+            color: #FFD700;
+
+        }
+
+    </style>
+
 </head>
+
 <body class="bg-dark-primary">
 
-    <header class="bg-dark-primary/70 backdrop-blur-sm sticky top-0 z-50 border-b border-[#333]">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-xl font-bold text-white font-serif-display tracking-wider">THE PATH</h1>
-            <a href="#harga" class="bg-gold text-dark-primary font-bold px-5 py-2 rounded-lg hover:bg-gold-dark transition-colors">Dapatkan Sekarang</a>
-        </div>
-    </header>
 
-    <main>
-        <section class="py-20 md:py-28 text-center bg-dark-primary">
-            <div class="container mx-auto px-6 max-w-4xl">
-                <p class="max-w-3xl mx-auto text-xl md:text-2xl text-gold font-bold mb-6 glow-text">
-                    Ini bukanlah kebetulan, bisa jadi inilah jalan Pertolongan dari Allah atas masalah-masalahmu.
-                </p>
-                <h1 class="font-serif-display text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                    THE PATH <br>Jalan Rezeki Barokah & Hidup Berkelimpahan
-                </h1>
-                <p class="max-w-3xl mx-auto text-lg md:text-xl text-gray-400 mb-10">
-                    Anda sudah berjuang keras mencari rezeki, melunasi hutang, berjuang memiliki keturunan, mencari jodoh, hingga melawan sakit menahun. Namun, rasanya seperti ada 'rem' tak kasat mata yang menahan.
-                </p>
-                <div class="mt-10">
-                    <a href="#harga" class="bg-gold text-dark-primary font-bold px-10 py-5 rounded-full text-xl hover:bg-gold-dark transition-transform hover:scale-105 inline-block shadow-lg shadow-gold/30 main-cta-btn">
-                        BUKA KUNCI KEBERLIMPAHAN SEJATI ANDA!
-                    </a>
-                </div>
-            </div>
-        </section>
+    <header class="bg-dark-primary/70 backdrop-blur-sm sticky top-0 z-50 border-b border-[#333]">
 
-        <section class="py-20 bg-dark-secondary">
-            <div class="container mx-auto px-6 max-w-5xl">
-                <div class="md:flex md:items-center md:space-x-12">
-                    <div class="md:w-1/2 mb-10 md:mb-0">
-                        <img src="https://raw.githubusercontent.com/kesinilagi/Landingpage/main/Handphone.png" alt="THE PATH Digital Book on a phone" class="w-full max-w-sm mx-auto rounded-lg shadow-2xl transition-transform duration-300 hover:scale-105 border-2 border-gold shadow-gold/20" />
-                    </div>
-                    <div class="md:w-1/2">
-                        <h2 class="text-3xl md:text-4xl font-bold text-white font-serif-display mb-6">
-                            Apa yang Ada di dalam THE PATH?
-                        </h2>
-                        <ul class="space-y-6 text-gray-300 list-star text-lg">
-                            <li><strong class="text-gold">Metode SIRNA:</strong> Santai - Identifikasi - Ridho - Nanya & Niat - Alirkan. Langkah praktis membuka pintu keajaiban.</li>
-                            <li><strong class="text-gold">Ruang Digital Interaktif:</strong> Audio visual untuk healing trauma, anxiety, afirmasi, dan memanifestasikan impian.</li>
-                            <li><strong class="text-gold">Ruang Rahasia Malam:</strong> Akses khusus untuk malam hari saat hati paling jujur dan doa paling kuat.</li>
-                            <li><strong class="text-gold">Bonus Audio Doa & Sholawat:</strong> Disertai panduan dan fadilah penggunaannya.</li>
-                            <li><strong class="text-gold">Bukan Aplikasi Biasa:</strong> Ini Teman Jiwa. Namamu disapa setiap kali membuka. Dirancang sepenuh hati untuk perjalanan hatimu.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
 
-        <section id="harga" class="py-20 bg-dark-primary">
-            <div class="container mx-auto px-6 max-w-4xl text-center">
-                <h2 class="font-serif-display text-4xl md:text-5xl font-bold text-white mb-4">
-                    Pilih Paket Keberlimpahan Anda
-                </h2>
-                <p class="text-lg md:text-xl text-gray-400 mb-10">
-                    Sebuah investasi yang jauh lebih berharga daripada biaya-biaya yang selama ini Anda keluarkan tanpa hasil.
-                </p>
+            <h1 class="text-xl font-bold text-white font-serif-display tracking-wider">LOA CoDex</h1>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="feature-card p-8 rounded-lg shadow-xl flex flex-col items-center">
-                        <h3 class="text-3xl font-bold text-white mb-4">Paket 1 Pengguna</h3>
-                        <p class="text-xl md:text-2xl text-gray-500 line-through mb-1">Rp 786.000</p>
-                        <p class="text-gold glow-text text-5xl md:text-6xl font-bold font-serif-display mb-4">
-                            Rp 369.000
-                        </p>
-                        <p class="text-lg text-gray-400 mb-8">
-                            Untuk 1 pengguna: Akses seumur hidup + Layanan update gratis.
-                        </p>
-                        <button onclick="openOrderModal('Paket 1 Pengguna', '369.000')" class="bg-gold text-dark-primary font-bold px-8 py-4 rounded-full text-xl hover:bg-gold-dark transition-transform hover:scale-105 inline-block shadow-lg shadow-gold/30">
-                            Dapatkan Sekarang
-                        </button>
-                    </div>
+            <a href="#harga" class="bg-gold text-dark-primary font-bold px-5 py-2 rounded-lg hover:bg-gold-dark transition-colors">Dapatkan Sekarang</a>
 
-                    <div class="feature-card p-8 rounded-lg shadow-xl flex flex-col items-center">
-                        <h3 class="text-3xl font-bold text-white mb-4">Paket 3 Pengguna</h3>
-                        <p class="text-xl md:text-2xl text-gray-500 line-through mb-1">Rp 999.000</p>
-                        <p class="text-gold glow-text text-5xl md:text-6xl font-bold font-serif-display mb-4">
-                            Rp 399.000
-                        </p>
-                        <p class="text-lg text-gray-400 mb-8">
-                            Untuk 3 pengguna: Akses seumur hidup + Layanan update gratis.
-                        </p>
-                        <button onclick="openOrderModal('Paket 3 Pengguna', '399.000')" class="bg-gold text-dark-primary font-bold px-8 py-4 rounded-full text-xl hover:bg-gold-dark transition-transform hover:scale-105 inline-block shadow-lg shadow-gold/30">
-                            Dapatkan Sekarang
-                        </button>
-                    </div>
-                </div>
+        </div>
 
-                <p class="text-lg md:text-xl text-gold font-bold text-center mt-12">
-                    Penawaran Khusus Terbatas! <br>Jangan lewatkan kesempatan ini!</br>
-                </p>
-            </div>
-        </section>
-    </main>
+    </header>
 
-    <footer class="bg-dark-secondary border-t border-[#333]">
-        <div class="container mx-auto px-6 py-6 text-center text-gray-500">
-            <p>© 2025 THE PATH. All rights reserved.</p>
-        </div>
-    </footer>
 
-    <div id="orderModal" class="modal-overlay">
-        <div class="modal-content">
-            <button class="modal-close-btn" onclick="closeOrderModal()">&times;</button>
-            <h3 class="text-3xl font-bold text-white mb-6 text-center">Formulir Pemesanan</h3>
-            <p class="text-lg text-gray-300 mb-6 text-center">Anda memilih <span id="selectedPackageDisplay" class="text-gold font-bold"></span> seharga <span id="selectedPriceDisplay" class="text-gold font-bold"></span>.</p>
-            <p class="text-sm text-gray-400 mb-4 text-center">Setelah mengirim pesanan ini, Anda akan diarahkan ke WhatsApp kami untuk detail pembayaran dan konfirmasi transfer.</p>
-            <form id="orderForm">
-                <input type="hidden" id="modalPackageType" name="packageType">
-                <input type="hidden" id="modalPrice" name="price">
-                <label for="name" class="block text-lg font-semibold mb-2">Nama Lengkap:</label>
-                <input type="text" id="name" name="name" class="form-input" placeholder="Masukkan nama Anda" required>
-                <label for="phone" class="block text-lg font-semibold mb-2">Nomor WhatsApp:</label>
-                <input type="tel" id="phone" name="phone" class="form-input" placeholder="Contoh: 6281234567890" required>
-                <label for="email" class="block text-lg font-semibold mb-2">Email (opsional):</label>
-                <input type="email" id="email" name="email" class="form-input" placeholder="Masukkan email Anda">
-                <button type="submit" class="form-submit-btn">Kirim Pesanan</button>
-            </form>
-        </div>
-    </div>
+    <main>
 
-    <div id="exitIntentModal" class="modal-overlay">
-        <div class="modal-content">
-            <button class="modal-close-btn" onclick="closeExitIntentModal()">&times;</button>
-            <h3 class="text-3xl font-bold text-white mb-6 text-center font-serif-display exit-intent-modal-text">
-                Apakah kamu mau melewatkan kesempatan untuk menolong dirimu sendiri menjadi bahagia dan berkelimpahan?
-            </h3>
-            <p class="text-lg text-gray-300 mb-8 text-center exit-intent-modal-text">
-                Jangan biarkan keraguan menghalangi jalan rezekimu. THE PATH adalah investasi untuk hidup yang lebih berlimpah dan tenang.
-            </p>
-            <div class="text-center">
-                <a href="#harga" onclick="closeExitIntentModalAndScroll()" class="bg-gold text-dark-primary font-bold px-8 py-4 rounded-full text-xl hover:bg-gold-dark transition-transform hover:scale-105 inline-block shadow-lg shadow-gold/30">
-                    Lihat Penawaran Spesial Sekarang!
-                </a>
-                <button onclick="closeExitIntentModal()" class="block w-full mt-4 text-gray-400 hover:text-white transition-colors text-sm">
-                    Tidak, saya ingin melewatkan kesempatan ini.
-                </button>
-            </div>
-        </div>
-    </div>
+        <section class="py-20 md:py-28 text-center bg-dark-primary">
 
-    <div id="messageBox" class="message-box">
-        <p id="messageBoxText" class="text-xl font-semibold"></p>
-        <button onclick="hideMessageBox()">Oke</button>
-    </div>
-    
-    <div id="successMessageSection" class="hidden fixed inset-0 bg-dark-primary text-gray-200 flex flex-col items-center justify-center text-center p-8 z-[1000]">
-        <h2 class="font-serif-display text-5xl md:text-6xl font-bold text-gold mb-6 animate-pulse">Terima Kasih kepada Anda, karena Sudah Menolong diri Anda</h2>
-        <p class="text-xl md:text-2xl max-w-2xl mb-8">
-            Silakan lanjutkan percakapan di WhatsApp kami untuk detail pembayaran, konfirmasi transfer, dan akses transformasi hidup Anda.
-        </p>
-        <p class="text-lg md:text-xl max-w-2xl mb-12">
-            Kami akan segera memproses pesanan Anda setelah konfirmasi pembayaran.
-        </p>
-        <a id="whatsappSuccessLink" href="#" target="_blank" class="bg-gold text-dark-primary font-bold px-10 py-5 rounded-full text-2xl hover:bg-gold-dark transition-transform hover:scale-105 inline-block shadow-xl shadow-gold/30">
-            Lanjutkan ke WhatsApp
-        </a>
-    </div>
+            <div class="container mx-auto px-6 max-w-4xl">
 
-    <script>
-        // Google Analytics Tracking CTA
-        function orderNow() {
-            gtag('event', 'conversion', {
-                'send_to': 'G-XXXXXXXXX', // GANTI DENGAN ID GA4 KAMU
-                'event_category': 'CTA',
-                'event_label': 'Klik CTA Order (General)'
-            });
-        }
-        
-        let isOrderSubmitted = false;
-        const orderModal = document.getElementById('orderModal');
-        const exitIntentModal = document.getElementById('exitIntentModal');
-        const successMessageSection = document.getElementById('successMessageSection');
-        const whatsappSuccessLink = document.getElementById('whatsappSuccessLink');
-        const modalPackageType = document.getElementById('modalPackageType');
-        const modalPrice = document.getElementById('modalPrice');
-        const selectedPackageDisplay = document.getElementById('selectedPackageDisplay');
-        const selectedPriceDisplay = document.getElementById('selectedPriceDisplay');
+                <p class="max-w-3xl mx-auto text-xl md:text-2xl text-gold font-bold mb-6 glow-text">
 
-        const yourWhatsAppNumber = "6285602378995";
+                    Ini bukanlah kebetulan, bisa jadi inilah jalan Pertolongan dari Allah atas masalah-masalahmu.
 
-        function openOrderModal(packageType, price) {
-            modalPackageType.value = packageType;
-            modalPrice.value = price;
-            selectedPackageDisplay.textContent = packageType;
-            selectedPriceDisplay.textContent = `Rp ${price}`;
-            orderModal.classList.add('show');
-            document.body.style.overflow = 'hidden';
-            const formInputs = orderModal.querySelectorAll('.form-input');
-            formInputs.forEach(input => {
-                input.addEventListener('focus', function() {
-                    setTimeout(() => {
-                        this.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }, 100);
-                });
-            });
-            gtag('event', 'view_item', {
-                'currency': 'IDR',
-                'value': parseFloat(price.replace('.', '').replace(',', '.')),
-                'items': [{
-                    'item_id': 'THE_PATH_Paket',
-                    'item_name': packageType,
-                    'price': parseFloat(price.replace('.', '').replace(',', '.')),
-                }]
-            });
-        }
+                </p>
 
-        function closeOrderModal() {
-            orderModal.classList.remove('show');
-            document.body.style.overflow = '';
-            if (!isOrderSubmitted) {
-                setTimeout(() => {
-                    showExitIntentModal();
-                }, 100);
-            }
-            document.getElementById('orderForm').reset();
-        }
+                <h1 class="font-serif-display text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
 
-        let exitIntentShown = false;
-        document.addEventListener('mouseleave', (event) => {
-            if (event.clientY < 10 && !exitIntentShown && !isOrderSubmitted && !orderModal.classList.contains('show')) {
-                showExitIntentModal();
-            }
-        });
+                    THE PATH <br>Jalan Rezeki Barokah & Hidup Berkelimpahan
 
-        // Add a function to show the modal
-        function showExitIntentModal() {
-            exitIntentModal.classList.add('show');
-            document.body.style.overflow = 'hidden';
-            exitIntentShown = true;
-            gtag('event', 'popup_shown', {
-                'event_category': 'Engagement',
-                'event_label': 'Exit Intent Modal'
-            });
-        }
+                </h1>
 
-        function closeExitIntentModal() {
-            exitIntentModal.classList.remove('show');
-            document.body.style.overflow = '';
-        }
+                <p class="max-w-3xl mx-auto text-lg md:text-xl text-gray-400 mb-10">
 
-        function closeExitIntentModalAndScroll() {
-            closeExitIntentModal();
-            const hargaSection = document.getElementById('harga');
-            if (hargaSection) {
-                hargaSection.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
+                    Anda sudah berjuang keras mencari rezeki, melunasi hutang, berjuang memiliki keturunan, mencari jodoh, hingga melawan sakit menahun. Namun, rasanya seperti ada 'rem' tak kasat mata yang menahan.
 
-        document.getElementById('orderForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const email = document.getElementById('email').value;
-            const packageType = modalPackageType.value;
-            const price = modalPrice.value;
-            let whatsappMessage = `Halo THE PATH, saya ingin memesan produk "${packageType}" seharga Rp ${price}.`;
-            whatsappMessage += `\nNama: ${name}`;
-            whatsappMessage += `\nNomor WhatsApp: ${phone}`;
-            if (email) {
-                whatsappMessage += `\nEmail: ${email}`;
-            }
-            whatsappMessage += `\n\nMohon informasinya untuk proses pembayaran dan akses produk. Terima kasih.`;
-            const encodedMessage = encodeURIComponent(whatsappMessage);
-            const whatsappUrl = `https://wa.me/${yourWhatsAppNumber}?text=${encodedMessage}`;
-            whatsappSuccessLink.href = whatsappUrl;
-            closeOrderModal();
-            successMessageSection.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-            isOrderSubmitted = true;
-            gtag('event', 'purchase', {
-                'transaction_id': 'T' + Date.now(),
-                'affiliation': 'THE PATH Website',
-                'value': parseFloat(price.replace('.', '').replace(',', '.')),
-                'currency': 'IDR',
-                'tax': 0,
-                'shipping': 0,
-                'items': [{
-                    'item_id': 'THE_PATH_Paket',
-                    'item_name': packageType,
-                    'price': parseFloat(price.replace('.', '').replace(',', '.')),
-                    'quantity': 1
-                }]
-            });
-        });
+                </p>
 
-    </script>
+                <div class="mt-10">
+
+                    <a href="#harga" class="bg-gold text-dark-primary font-bold px-10 py-5 rounded-full text-xl hover:bg-gold-dark transition-transform hover:scale-105 inline-block shadow-lg shadow-gold/30 main-cta-btn">
+
+                        BUKA KUNCI KEBERLIMPAHAN SEJATI ANDA!
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="py-20 bg-dark-secondary">
+
+            <div class="container mx-auto px-6 max-w-5xl">
+
+                <div class="md:flex md:items-center md:space-x-12">
+
+                    <div class="md:w-1/2 mb-10 md:mb-0">
+                        <img src="https://raw.githubusercontent.com/kesinilagi/Landingpage/main/Handphone.png" alt="THE PATH Digital Book on a phone" class="w-full max-w-sm mx-auto rounded-lg shadow-2xl transition-transform duration-300 hover:scale-105 border-2 border-gold shadow-gold/20" />
+                    </div>
+
+                    <div class="md:w-1/2">
+
+                        <h2 class="text-3xl md:text-4xl font-bold text-white font-serif-display mb-6">
+
+                            Apa yang Ada di dalam THE PATH?
+
+                        </h2>
+
+                        <ul class="space-y-6 text-gray-300 list-star text-lg">
+
+                            <li><strong class="text-gold">Metode SIRNA:</strong> Santai - Identifikasi - Ridho - Nanya & Niat - Alirkan. Langkah praktis membuka pintu keajaiban.</li>
+
+                            <li><strong class="text-gold">Ruang Digital Interaktif:</strong> Audio visual untuk healing trauma, anxiety, afirmasi, dan memanifestasikan impian.</li>
+
+                            <li><strong class="text-gold">Ruang Rahasia Malam:</strong> Akses khusus untuk malam hari saat hati paling jujur dan doa paling kuat.</li>
+
+                            <li><strong class="text-gold">Bonus Audio Doa & Sholawat:</strong> Disertai panduan dan fadilah penggunaannya.</li>
+
+                            <li><strong class="text-gold">Bukan Aplikasi Biasa:</strong> Ini Teman Jiwa. Namamu disapa setiap kali membuka. Dirancang sepenuh hati untuk perjalanan hatimu.</li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="harga" class="py-20 bg-dark-primary">
+
+            <div class="container mx-auto px-6 max-w-4xl text-center">
+
+                <h2 class="font-serif-display text-4xl md:text-5xl font-bold text-white mb-4">
+
+                    Pilih Paket Keberlimpahan Anda
+
+                </h2>
+
+                <p class="text-lg md:text-xl text-gray-400 mb-10">
+
+                    Sebuah investasi yang jauh lebih berharga daripada biaya-biaya yang selama ini Anda keluarkan tanpa hasil.
+
+                </p>
+
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                    <div class="feature-card p-8 rounded-lg shadow-xl flex flex-col items-center">
+
+                        <h3 class="text-3xl font-bold text-white mb-4">Paket 1 Pengguna</h3>
+
+                        <p class="text-xl md:text-2xl text-gray-500 line-through mb-1">Rp 786.000</p>
+
+                        <p class="text-gold glow-text text-5xl md:text-6xl font-bold font-serif-display mb-4">
+
+                            Rp 369.000
+
+                        </p>
+
+                        <p class="text-lg text-gray-400 mb-8">
+
+                            Untuk 1 pengguna: Akses seumur hidup + Layanan update gratis.
+
+                        </p>
+
+                        <button onclick="openOrderModal('Paket 1 Pengguna', '369.000')" class="bg-gold text-dark-primary font-bold px-8 py-4 rounded-full text-xl hover:bg-gold-dark transition-transform hover:scale-105 inline-block shadow-lg shadow-gold/30">
+
+                            Dapatkan Sekarang
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="feature-card p-8 rounded-lg shadow-xl flex flex-col items-center">
+
+                        <h3 class="text-3xl font-bold text-white mb-4">Paket 3 Pengguna</h3>
+
+                        <p class="text-xl md:text-2xl text-gray-500 line-through mb-1">Rp 999.000</p>
+
+                        <p class="text-gold glow-text text-5xl md:text-6xl font-bold font-serif-display mb-4">
+
+                            Rp 399.000
+
+                        </p>
+
+                        <p class="text-lg text-gray-400 mb-8">
+
+                            Untuk 3 pengguna: Akses seumur hidup + Layanan update gratis.
+
+                        </p>
+
+                        <button onclick="openOrderModal('Paket 3 Pengguna', '399.000')" class="bg-gold text-dark-primary font-bold px-8 py-4 rounded-full text-xl hover:bg-gold-dark transition-transform hover:scale-105 inline-block shadow-lg shadow-gold/30">
+
+                            Dapatkan Sekarang
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <p class="text-lg md:text-xl text-gold font-bold text-center mt-12">
+
+                    Penawaran Khusus Terbatas! <br>Jangan lewatkan kesempatan ini!</br>
+
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="bg-dark-secondary border-t border-[#333]">
+
+        <div class="container mx-auto px-6 py-6 text-center text-gray-500">
+
+            <p>© 2025 The PATH. All rights reserved.</p>
+
+        </div>
+
+    </footer>
+
+
+    <div id="orderModal" class="modal-overlay">
+
+        <div class="modal-content">
+
+            <button class="modal-close-btn" onclick="closeOrderModal()">&times;</button>
+
+            <h3 class="text-3xl font-bold text-white mb-6 text-center">Formulir Pemesanan</h3>
+
+            <p class="text-lg text-gray-300 mb-6 text-center">Anda memilih <span id="selectedPackageDisplay" class="text-gold font-bold"></span> seharga <span id="selectedPriceDisplay" class="text-gold font-bold"></span>.</p>
+
+            <p class="text-sm text-gray-400 mb-4 text-center">Setelah mengirim pesanan ini, Anda akan diarahkan ke WhatsApp kami untuk detail pembayaran dan konfirmasi transfer.</p>
+
+            <form id="orderForm">
+
+                <input type="hidden" id="modalPackageType" name="packageType">
+
+                <input type="hidden" id="modalPrice" name="price">
+
+                <label for="name" class="block text-lg font-semibold mb-2">Nama Lengkap:</label>
+
+                <input type="text" id="name" name="name" class="form-input" placeholder="Masukkan nama Anda" required>
+
+                <label for="phone" class="block text-lg font-semibold mb-2">Nomor WhatsApp:</label>
+
+                <input type="tel" id="phone" name="phone" class="form-input" placeholder="Contoh: 6281234567890" required>
+
+                <label for="email" class="block text-lg font-semibold mb-2">Email (opsional):</label>
+
+                <input type="email" id="email" name="email" class="form-input" placeholder="Masukkan email Anda">
+
+                <button type="submit" class="form-submit-btn">Kirim Pesanan</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <div id="exitIntentModal" class="modal-overlay">
+
+        <div class="modal-content">
+
+            <button class="modal-close-btn" onclick="closeExitIntentModal()">&times;</button>
+
+            <h3 class="text-3xl font-bold text-white mb-6 text-center font-serif-display exit-intent-modal-text">
+
+                Apakah kamu mau melewatkan kesempatan untuk menolong dirimu sendiri menjadi bahagia dan berkelimpahan?
+
+            </h3>
+
+            <p class="text-lg text-gray-300 mb-8 text-center exit-intent-modal-text">
+
+                Jangan biarkan keraguan menghalangi jalan rezekimu.The Path adalah investasi untuk hidup yang lebih berlimpah dan tenang.
+
+            </p>
+
+            <div class="text-center">
+
+                <a href="#harga" onclick="closeExitIntentModalAndScroll()" class="bg-gold text-dark-primary font-bold px-8 py-4 rounded-full text-xl hover:bg-gold-dark transition-transform hover:scale-105 inline-block shadow-lg shadow-gold/30">
+
+                    Lihat Penawaran Spesial Sekarang!
+
+                </a>
+
+                <button onclick="closeExitIntentModal()" class="block w-full mt-4 text-gray-400 hover:text-white transition-colors text-sm">
+
+                    Tidak, saya ingin melewatkan kesempatan ini.
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div id="messageBox" class="message-box">
+
+        <p id="messageBoxText" class="text-xl font-semibold"></p>
+
+        <button onclick="hideMessageBox()">Oke</button>
+
+    </div>
+
+    
+
+    <div id="successMessageSection" class="hidden fixed inset-0 bg-dark-primary text-gray-200 flex flex-col items-center justify-center text-center p-8 z-[1000]">
+
+        <h2 class="font-serif-display text-5xl md:text-6xl font-bold text-gold mb-6 animate-pulse">Terima Kasih kepada Anda, karena Sudah Menolong diri Anda</h2>
+
+        <p class="text-xl md:text-2xl max-w-2xl mb-8">
+
+            Silakan lanjutkan percakapan di WhatsApp kami untuk detail pembayaran, konfirmasi transfer, dan akses transformasi hidup Anda.
+
+        </p>
+
+        <p class="text-lg md:text-xl max-w-2xl mb-12">
+
+            Kami akan segera memproses pesanan Anda setelah konfirmasi pembayaran.
+
+        </p>
+
+        <a id="whatsappSuccessLink" href="#" target="_blank" class="bg-gold text-dark-primary font-bold px-10 py-5 rounded-full text-2xl hover:bg-gold-dark transition-transform hover:scale-105 inline-block shadow-xl shadow-gold/30">
+
+            Lanjutkan ke WhatsApp
+
+        </a>
+
+    </div>
+
+
+    <script>
+
+        // Google Analytics Tracking CTA
+
+        function orderNow() {
+
+            gtag('event', 'conversion', {
+
+                'send_to': 'G-XXXXXXXXX', // GANTI DENGAN ID GA4 KAMU
+
+                'event_category': 'CTA',
+
+                'event_label': 'Klik CTA Order (General)'
+
+            });
+
+        }
+
+        
+
+        let isOrderSubmitted = false;
+
+        const orderModal = document.getElementById('orderModal');
+
+        const exitIntentModal = document.getElementById('exitIntentModal');
+
+        const successMessageSection = document.getElementById('successMessageSection');
+
+        const whatsappSuccessLink = document.getElementById('whatsappSuccessLink');
+
+        const modalPackageType = document.getElementById('modalPackageType');
+
+        const modalPrice = document.getElementById('modalPrice');
+
+        const selectedPackageDisplay = document.getElementById('selectedPackageDisplay');
+
+        const selectedPriceDisplay = document.getElementById('selectedPriceDisplay');
+
+
+        const yourWhatsAppNumber = "6285602378995";
+
+
+        function openOrderModal(packageType, price) {
+
+            modalPackageType.value = packageType;
+
+            modalPrice.value = price;
+
+            selectedPackageDisplay.textContent = packageType;
+
+            selectedPriceDisplay.textContent = `Rp ${price}`;
+
+            orderModal.classList.add('show');
+
+            document.body.style.overflow = 'hidden';
+
+            const formInputs = orderModal.querySelectorAll('.form-input');
+
+            formInputs.forEach(input => {
+
+                input.addEventListener('focus', function() {
+
+                    setTimeout(() => {
+
+                        this.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                    }, 100);
+
+                });
+
+            });
+
+            gtag('event', 'view_item', {
+
+                'currency': 'IDR',
+
+                'value': parseFloat(price.replace('.', '').replace(',', '.')),
+
+                'items': [{
+
+                    'item_id': 'LOA_Codex_Paket',
+
+                    'item_name': packageType,
+
+                    'price': parseFloat(price.replace('.', '').replace(',', '.'))
+
+                }]
+
+            });
+
+        }
+
+
+        function closeOrderModal() {
+
+            orderModal.classList.remove('show');
+
+            document.body.style.overflow = '';
+
+            if (!isOrderSubmitted) {
+
+                setTimeout(() => {
+
+                    showExitIntentModal();
+
+                }, 100);
+
+            }
+
+            document.getElementById('orderForm').reset();
+
+        }
+
+
+        let exitIntentShown = false;
+
+        document.addEventListener('mouseleave', (event) => {
+
+            if (event.clientY < 10 && !exitIntentShown && !isOrderSubmitted && !orderModal.classList.contains('show')) {
+
+                showExitIntentModal();
+
+            }
+
+        });
+
+
+        // Add a function to show the modal
+
+        function showExitIntentModal() {
+
+            exitIntentModal.classList.add('show');
+
+            document.body.style.overflow = 'hidden';
+
+            exitIntentShown = true;
+
+            gtag('event', 'popup_shown', {
+
+                'event_category': 'Engagement',
+
+                'event_label': 'Exit Intent Modal'
+
+            });
+
+        }
+
+
+        function closeExitIntentModal() {
+
+            exitIntentModal.classList.remove('show');
+
+            document.body.style.overflow = '';
+
+        }
+
+
+        function closeExitIntentModalAndScroll() {
+
+            closeExitIntentModal();
+
+            const hargaSection = document.getElementById('harga');
+
+            if (hargaSection) {
+
+                hargaSection.scrollIntoView({ behavior: 'smooth' });
+
+            }
+
+        }
+
+
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+
+            const phone = document.getElementById('phone').value;
+
+            const email = document.getElementById('email').value;
+
+            const packageType = modalPackageType.value;
+
+            const price = modalPrice.value;
+
+            let whatsappMessage = `Halo The Path, saya ingin memesan produk "${packageType}" seharga Rp ${price}.`;
+
+            whatsappMessage += `\nNama: ${name}`;
+
+            whatsappMessage += `\nNomor WhatsApp: ${phone}`;
+
+            if (email) {
+
+                whatsappMessage += `\nEmail: ${email}`;
+
+            }
+
+            whatsappMessage += `\n\nMohon informasinya untuk proses pembayaran dan akses produk. Terima kasih.`;
+
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+
+            const whatsappUrl = `https://wa.me/${yourWhatsAppNumber}?text=${encodedMessage}`;
+
+            whatsappSuccessLink.href = whatsappUrl;
+
+            closeOrderModal();
+
+            successMessageSection.classList.remove('hidden');
+
+            document.body.style.overflow = 'hidden';
+
+            isOrderSubmitted = true;
+
+            gtag('event', 'purchase', {
+
+                'transaction_id': 'T' + Date.now(),
+
+                'affiliation': 'LOA Codex Website',
+
+                'value': parseFloat(price.replace('.', '').replace(',', '.')),
+
+                'currency': 'IDR',
+
+                'tax': 0,
+
+                'shipping': 0,
+
+                'items': [{
+
+                    'item_id': 'LOA_Codex_Paket',
+
+                    'item_name': packageType,
+
+                    'price': parseFloat(price.replace('.', '').replace(',', '.')),
+
+                    'quantity': 1
+
+                }]
+
+            });
+
+        });
+
+
+    </script>
+
 </body>
-</html> bro untuk gambar yang satunya lagi itu kan dia berbentuk buku nah itu pengen aku rubah jadi gambar yang di handphone juga biar serasi gitu loh jadi di halaman itu ada 2 gambar di handphone bisa ga ya?
+
+</html>
